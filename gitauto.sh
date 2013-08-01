@@ -6,6 +6,6 @@ do
 	git commit -m "AUTO"
 	git push origin master
 	echo "Pushing git"
-	sleep 10m
+	sleep 600
 done
 
