@@ -21,19 +21,19 @@ public class ProximityInventoryLink extends Block {
 
         this.setHardness(0.5F);
         this.setStepSound(Block.soundAnvilFootstep);
-        this.setUnlocalizedName("Inventory Link");
+        this.setUnlocalizedName("Proximity Inventory Link");
         this.setCreativeTab(MissionControlTab.instance);
-        LanguageRegistry.addName(this, "Inventory Link");
+        LanguageRegistry.addName(this, "Proximity Inventory Link");
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
-        GameRegistry.registerBlock(this, "Inventory Link");
-        GameRegistry.registerTileEntity(InventoryLinkTileEntity.class, "Inventory Link");
+        GameRegistry.registerBlock(this, "Proximity Inventory Link");
+        GameRegistry.registerTileEntity(InventoryLinkTileEntity.class, "Proximity Inventory Link");
 	}
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister par1IconRegister) {
 
-		blockIcon = par1IconRegister.registerIcon("missioncontrol:InventoryLink");
+		blockIcon = par1IconRegister.registerIcon("missioncontrol:ProximityInventoryLink");
 	}
 	@Override
 	public TileEntity createTileEntity(World var1, int metadata) {
@@ -45,17 +45,7 @@ public class ProximityInventoryLink extends Block {
 	public boolean hasTileEntity(int metadata) {
 		return true;
 	}
-	@Override
-	public boolean onBlockActivated(World world, int x,int y, int z, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9){
-		if(!world.isRemote&&world.getBlockTileEntity(x, y, z)!=null&&world.getBlockTileEntity(x, y, z) instanceof InventoryLinkTileEntity){
-			InventoryLinkTileEntity tile=(InventoryLinkTileEntity) world.getBlockTileEntity(x, y, z);
-			tile.player=par5EntityPlayer.getEntityName();
-			par5EntityPlayer.addChatMessage("\u00a7b"+"Linked your inventory to this block.");
-
-			par5EntityPlayer.addChatMessage("\u00a7b"+"This can be dangerous.");
-		}
-		return true;
-	}
+	
 	
 
 }
