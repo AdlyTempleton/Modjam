@@ -17,7 +17,7 @@ public class FocusedInventoryLinkTileEntity extends TileEntity implements IInven
 		if(stacks==null){
 			return 0;
 		}
-		System.out.println(stacks);
+		System.out.println(stacks.length);
 		return getRelaventStacks().length;
 	}
 	public ItemStack[] getRelaventStacks(){
@@ -36,7 +36,7 @@ public class FocusedInventoryLinkTileEntity extends TileEntity implements IInven
 				toReturn.add(entityPlayer.inventory.getStackInSlot(i));
 			}
 		}
-		return toReturn.toArray(new ItemStack[1]);
+		return toReturn.toArray(new ItemStack[0]);
 	} 
 	
 	public int getRealStackIndex(int mirrorIndex){
@@ -53,10 +53,11 @@ public class FocusedInventoryLinkTileEntity extends TileEntity implements IInven
 		for(int i=0;i<entityPlayer.inventory.getSizeInventory();i++){
 			if(entityPlayer.inventory.getStackInSlot(i)!=null&&entityPlayer.inventory.getStackInSlot(i).getItem()==target){
 				count++;
+				if(count==mirrorIndex){
+					return i;
+				}
 			}
-			if(count==mirrorIndex){
-				return i;
-			}
+			
 		}
 		return 0;
 		
