@@ -1,5 +1,6 @@
 package pixlepix.missioncontrol.common;
 
+import pixlepix.missioncontrol.blocks.DeathInventoryLink;
 import pixlepix.missioncontrol.blocks.EnderInventoryLink;
 import pixlepix.missioncontrol.blocks.FocusedInventoryLink;
 import pixlepix.missioncontrol.blocks.InputInventoryLink;
@@ -32,6 +33,8 @@ public class MissionControl {
 	public static OutputInventoryLink outputInventoryLink;
 
 	public static InputInventoryLink inputInventoryLink;
+
+	public static DeathInventoryLink deathInventoryLink;
 	public static MissionControlTab tab=new MissionControlTab();
 	
 
@@ -39,6 +42,7 @@ public class MissionControl {
 	public static MissionControl instance;
 	@SidedProxy(clientSide = "pixlepix.missioncontrol.common.helper.ClientProxy", serverSide = "pixlepix.missioncontrol.common.helper.CommonProxy")
 	public static CommonProxy proxy;
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		this.inventoryLink=new InventoryLink(1215);
@@ -54,6 +58,8 @@ public class MissionControl {
 		this.outputInventoryLink=new OutputInventoryLink(1220);
 
 		this.inputInventoryLink=new InputInventoryLink(1221);
+
+		this.deathInventoryLink=new DeathInventoryLink(1222);
 	}
 
 	@EventHandler
