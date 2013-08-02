@@ -62,9 +62,10 @@ public class SelectiveInventoryLink extends Block {
 						break;
 					case 2:
 						modeName="Armor";
-						break'
+						break;
+						
 				}
-					
+				par5EntityPlayer.addChatMessage("\u00a7b"+"Switched mode to "+modeName);
 				
 			}else{
 				tile.player=par5EntityPlayer.getEntityName();
