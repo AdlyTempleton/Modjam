@@ -23,7 +23,7 @@ public class EnderInventoryLinkTileEntity extends TileEntity implements IInvento
 		if(entityPlayer==null){
 			return null;
 		}
-		return entityPlayer.inventory.getStackInSlot(i);
+		return entityPlayer.getInventoryEnderChest().getStackInSlot(i);
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class EnderInventoryLinkTileEntity extends TileEntity implements IInvento
 			return null;
 		}
 
-		return entityPlayer.inventory.decrStackSize(i, j);
+		return entityPlayer.getInventoryEnderChest().decrStackSize(i, j);
 	}
 
 	@Override
@@ -56,7 +56,7 @@ public class EnderInventoryLinkTileEntity extends TileEntity implements IInvento
 		if(entityPlayer==null){
 			return;
 		}
-		entityPlayer.inventory.setInventorySlotContents(i, itemstack);
+		entityPlayer.getInventoryEnderChest().setInventorySlotContents(i, itemstack);
 	}
 
 	@Override
@@ -86,7 +86,7 @@ public class EnderInventoryLinkTileEntity extends TileEntity implements IInvento
 		if(entityPlayer==null){
 			return;
 		}
-		entityPlayer.inventory.onInventoryChanged();
+		entityPlayer.getInventoryEnderChest().onInventoryChanged();
 		
 	}
 
