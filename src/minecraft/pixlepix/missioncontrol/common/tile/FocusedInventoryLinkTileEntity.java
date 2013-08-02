@@ -17,6 +17,7 @@ public class FocusedInventoryLinkTileEntity extends TileEntity implements IInven
 		if(stacks==null){
 			return 0;
 		}
+		System.out.println(stacks);
 		return getRelaventStacks().length;
 	}
 	public ItemStack[] getRelaventStacks(){
