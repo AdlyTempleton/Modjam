@@ -2,6 +2,7 @@ package pixlepix.missioncontrol.common;
 
 import pixlepix.missioncontrol.blocks.EnderInventoryLink;
 import pixlepix.missioncontrol.blocks.FocusedInventoryLink;
+import pixlepix.missioncontrol.blocks.InputInventoryLink;
 import pixlepix.missioncontrol.blocks.InventoryLink;
 import pixlepix.missioncontrol.blocks.OutputInventoryLink;
 import pixlepix.missioncontrol.blocks.ProximityInventoryLink;
@@ -29,6 +30,8 @@ public class MissionControl {
 	public static EnderInventoryLink enderInventoryLink;
 
 	public static OutputInventoryLink outputInventoryLink;
+
+	public static InputInventoryLink inputInventoryLink;
 	public static MissionControlTab tab=new MissionControlTab();
 	
 
@@ -49,6 +52,8 @@ public class MissionControl {
 		this.enderInventoryLink=new EnderInventoryLink(1219);
 
 		this.outputInventoryLink=new OutputInventoryLink(1220);
+
+		this.inputInventoryLink=new InputInventoryLink(1221);
 	}
 
 	@EventHandler
