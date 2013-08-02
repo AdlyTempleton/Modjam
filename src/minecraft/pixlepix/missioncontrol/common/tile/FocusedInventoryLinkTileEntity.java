@@ -47,7 +47,7 @@ public class FocusedInventoryLinkTileEntity extends TileEntity implements IInven
 		if(entityPlayer==null){
 			return 0;
 		}
-		int count=0;
+		int count=-1;
 		
 		for(int i=0;i<entityPlayer.inventory.getSizeInventory();i++){
 			if(entityPlayer.inventory.getStackInSlot(i)!=null&&entityPlayer.inventory.getStackInSlot(i).getItem()==target){
