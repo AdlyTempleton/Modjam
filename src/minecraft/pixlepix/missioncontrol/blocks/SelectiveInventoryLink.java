@@ -52,6 +52,20 @@ public class SelectiveInventoryLink extends Block {
 			if(par5EntityPlayer.isSneaking()){
 				tile.mode++;
 				tile.mode %= 3;
+				String modeName="NA";
+				switch(tile.mode){
+					case 0:
+						modeName="Hotbar";
+						break;
+					case 1:
+						modeName="Main Inventory";
+						break;
+					case 2:
+						modeName="Armor";
+						break'
+				}
+					
+				
 			}else{
 				tile.player=par5EntityPlayer.getEntityName();
 				par5EntityPlayer.addChatMessage("\u00a7b"+"Linked your inventory to this block.");
