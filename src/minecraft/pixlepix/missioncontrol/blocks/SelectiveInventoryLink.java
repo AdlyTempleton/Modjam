@@ -26,7 +26,7 @@ public class SelectiveInventoryLink extends Block {
         LanguageRegistry.addName(this, "Selective Inventory Link");
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
-        GameRegistry.registerBlock(this, "Inventory Link");
+        GameRegistry.registerBlock(this, "Selective Inventory Link");
 	}
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -48,10 +48,16 @@ public class SelectiveInventoryLink extends Block {
 	public boolean onBlockActivated(World world, int x,int y, int z, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9){
 		if(!world.isRemote&&world.getBlockTileEntity(x, y, z)!=null&&world.getBlockTileEntity(x, y, z) instanceof SelectiveInventoryLinkTileEntity){
 			SelectiveInventoryLinkTileEntity tile=(SelectiveInventoryLinkTileEntity) world.getBlockTileEntity(x, y, z);
-			tile.player=par5EntityPlayer.getEntityName();
-			par5EntityPlayer.addChatMessage("\u00a7b"+"Linked your inventory to this block.");
 
-			par5EntityPlayer.addChatMessage("\u00a7b"+"This can be dangerous.");
+			if(par5EntityPlayer.isSneaking()){
+				tile.mode++;
+				tile.mode %= 3;
+			}else{
+				tile.player=par5EntityPlayer.getEntityName();
+				par5EntityPlayer.addChatMessage("\u00a7b"+"Linked your inventory to this block.");
+	
+				par5EntityPlayer.addChatMessage("\u00a7b"+"This can be dangerous.");
+			}
 		}
 		return true;
 	}

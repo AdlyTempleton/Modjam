@@ -21,7 +21,7 @@ public class MissionControl {
 
 	@Instance("missioncontrol")
 	public static MissionControl instance;
-	@SidedProxy(clientSide = "pixlepix.missioncontrol.common.ClientProxy", serverSide = "pixlepix.missioncontrol.common.CommonProxy")
+	@SidedProxy(clientSide = "pixlepix.missioncontrol.common.helper.ClientProxy", serverSide = "pixlepix.missioncontrol.common.helper.CommonProxy")
 	public static CommonProxy proxy;
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
