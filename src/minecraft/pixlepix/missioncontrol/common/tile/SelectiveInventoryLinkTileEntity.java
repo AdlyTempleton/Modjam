@@ -42,10 +42,11 @@ public class SelectiveInventoryLinkTileEntity extends TileEntity implements IInv
 				shiftedIndex-=36;
 		}
 		shiftedIndex=Math.max(shiftedIndex, 0);
+		return entityPlayer.inventory.getStackInSlot(shiftedIndex);
 				
 				
 		}
-	}
+	
 
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
@@ -57,8 +58,18 @@ public class SelectiveInventoryLinkTileEntity extends TileEntity implements IInv
 		if(entityPlayer==null){
 			return null;
 		}
-
-		return entityPlayer.inventory.decrStackSize(i, j);
+		int shiftedIndex=i;
+		switch(mode){
+			case 0:
+				break;
+			case 1:
+				shiftedIndex-=9;
+				break;
+			case 2:
+				shiftedIndex-=36;
+		}
+		shiftedIndex=Math.max(shiftedIndex, 0);
+		return entityPlayer.inventory.decrStackSize(shiftedIndex, j);
 	}
 
 	@Override
@@ -76,8 +87,18 @@ public class SelectiveInventoryLinkTileEntity extends TileEntity implements IInv
 		EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
 		if(entityPlayer==null){
 			return;
-		}
-		entityPlayer.inventory.setInventorySlotContents(i, itemstack);
+		}int shiftedIndex=i;
+		switch(mode){
+		case 0:
+			break;
+		case 1:
+			shiftedIndex-=9;
+			break;
+		case 2:
+			shiftedIndex-=36;
+	}
+	shiftedIndex=Math.max(shiftedIndex, 0);
+		entityPlayer.inventory.setInventorySlotContents(shiftedIndex, itemstack);
 	}
 
 	@Override
