@@ -3,9 +3,11 @@ package pixlepix.missioncontrol.common;
 import pixlepix.missioncontrol.blocks.EnderInventoryLink;
 import pixlepix.missioncontrol.blocks.FocusedInventoryLink;
 import pixlepix.missioncontrol.blocks.InventoryLink;
+import pixlepix.missioncontrol.blocks.OutputInventoryLink;
 import pixlepix.missioncontrol.blocks.ProximityInventoryLink;
 import pixlepix.missioncontrol.blocks.SelectiveInventoryLink;
-import pixlepix.missioncontrol.common.helper.*;
+import pixlepix.missioncontrol.common.helper.CommonProxy;
+import pixlepix.missioncontrol.common.helper.MissionControlTab;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -25,6 +27,8 @@ public class MissionControl {
 	public static ProximityInventoryLink proximityInventoryLink;
 
 	public static EnderInventoryLink enderInventoryLink;
+
+	public static OutputInventoryLink outputInventoryLink;
 	public static MissionControlTab tab=new MissionControlTab();
 	
 
@@ -43,6 +47,8 @@ public class MissionControl {
 		this.focusedInventoryLink=new FocusedInventoryLink(1218);
 
 		this.enderInventoryLink=new EnderInventoryLink(1219);
+
+		this.outputInventoryLink=new OutputInventoryLink(1220);
 	}
 
 	@EventHandler
