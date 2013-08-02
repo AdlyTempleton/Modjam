@@ -11,7 +11,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "missioncontrol", name = "Mission Control", version = "0.1.0")
+@Mod(modid = "missioncontrol", name = "Mission Control", version = "0.2.0")
 public class MissionControl {
 	public static InventoryLink inventoryLink;
 
