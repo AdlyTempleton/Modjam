@@ -25,7 +25,7 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 	public void onPickup(LivingDropsEvent e){
 		if(e.entity instanceof EntityPlayer&&((EntityPlayer)e.entity).username.equals(player)){
 			drops=e.drops;
-			timeToCollect=100;
+			timeToCollect=400;
 		}
 	}
 	public void updateEntity(){
