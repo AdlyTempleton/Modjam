@@ -25,9 +25,11 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 	public void onPickup(LivingDropsEvent e){
 		if(e.entity instanceof EntityPlayer&&((EntityPlayer)e.entity).username.equals(player)){
 			drops=e.drops;
+			count=10;
 		}
 	}
 	public void updateEntity(){
+		count--;
 		Iterator<EntityItem> iter=drops.iterator();
 		while(iter.hasNext()){
 			EntityItem e=iter.next();
@@ -36,5 +38,6 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 				e.setDead();
 			}
 		}
+		drops==null
 	}
 }
