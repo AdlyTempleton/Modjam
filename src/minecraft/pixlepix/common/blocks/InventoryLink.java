@@ -3,6 +3,7 @@ package pixlepix.common.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
@@ -38,6 +39,12 @@ public class InventoryLink extends Block {
 	}
 	@Override
 	public boolean hasTileEntity(int metadata) {
+		return true;
+	}
+	@Override
+	public boolean onBlockActivated(World world, int x,int y, int z, EntityPlayer par5EntityPlayer, int par6, float par7, float par8, float par9){
+		if(world.getBlockTileEntity(x, y, z)!=null&&world.getBlockTileEntity(x, y, z) instanceof InventoryLinkTileEntity){
+		}
 		return true;
 	}
 	
