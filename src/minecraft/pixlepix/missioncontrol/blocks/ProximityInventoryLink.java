@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import pixlepix.missioncontrol.common.helper.MissionControlTab;
 import pixlepix.missioncontrol.common.tile.InventoryLinkTileEntity;
+import pixlepix.missioncontrol.common.tile.ProximityInventoryLinkTileEntity;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -27,7 +28,7 @@ public class ProximityInventoryLink extends Block {
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
         GameRegistry.registerBlock(this, "Proximity Inventory Link");
-        GameRegistry.registerTileEntity(InventoryLinkTileEntity.class, "Proximity Inventory Link");
+        GameRegistry.registerTileEntity(ProximityInventoryLinkTileEntity.class, "Proximity Inventory Link");
 	}
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -38,7 +39,7 @@ public class ProximityInventoryLink extends Block {
 	@Override
 	public TileEntity createTileEntity(World var1, int metadata) {
 		
-		return new InventoryLinkTileEntity();
+		return new ProximityInventoryLinkTileEntity();
 
 	}
 	@Override
