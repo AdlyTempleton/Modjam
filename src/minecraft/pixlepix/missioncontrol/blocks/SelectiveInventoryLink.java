@@ -8,6 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import pixlepix.missioncontrol.common.helper.MissionControlTab;
+import pixlepix.missioncontrol.common.tile.InventoryLinkTileEntity;
 import pixlepix.missioncontrol.common.tile.SelectiveInventoryLinkTileEntity;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -27,6 +28,8 @@ public class SelectiveInventoryLink extends Block {
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
         GameRegistry.registerBlock(this, "Selective Inventory Link");
+
+        GameRegistry.registerTileEntity(SelectiveInventoryLinkTileEntity.class, "Selective Inventory Link");
 	}
 	@Override
 	@SideOnly(Side.CLIENT)

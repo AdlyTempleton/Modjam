@@ -36,10 +36,10 @@ public class SelectiveInventoryLinkTileEntity extends TileEntity implements IInv
 			case 0:
 				break;
 			case 1:
-				shiftedIndex-=9;
+				shiftedIndex+=9;
 				break;
 			case 2:
-				shiftedIndex-=36;
+				shiftedIndex+=36;
 		}
 		shiftedIndex=Math.max(shiftedIndex, 0);
 		return entityPlayer.inventory.getStackInSlot(shiftedIndex);
@@ -63,10 +63,10 @@ public class SelectiveInventoryLinkTileEntity extends TileEntity implements IInv
 			case 0:
 				break;
 			case 1:
-				shiftedIndex-=9;
+				shiftedIndex+=9;
 				break;
 			case 2:
-				shiftedIndex-=36;
+				shiftedIndex+=36;
 		}
 		shiftedIndex=Math.max(shiftedIndex, 0);
 		return entityPlayer.inventory.decrStackSize(shiftedIndex, j);
@@ -92,10 +92,10 @@ public class SelectiveInventoryLinkTileEntity extends TileEntity implements IInv
 		case 0:
 			break;
 		case 1:
-			shiftedIndex-=9;
+			shiftedIndex+=9;
 			break;
 		case 2:
-			shiftedIndex-=36;
+			shiftedIndex+=36;
 	}
 	shiftedIndex=Math.max(shiftedIndex, 0);
 		entityPlayer.inventory.setInventorySlotContents(shiftedIndex, itemstack);
@@ -104,7 +104,7 @@ public class SelectiveInventoryLinkTileEntity extends TileEntity implements IInv
 	@Override
 	public String getInvName() {
 		// TODO Auto-generated method stub
-		return "Inventory Link";
+		return "Selective Inventory Link";
 	}
 
 	@Override

@@ -27,6 +27,7 @@ public class InventoryLink extends Block {
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
         GameRegistry.registerBlock(this, "Inventory Link");
+        GameRegistry.registerTileEntity(InventoryLinkTileEntity.class, "Inventory Link");
 	}
 	@Override
 	@SideOnly(Side.CLIENT)
