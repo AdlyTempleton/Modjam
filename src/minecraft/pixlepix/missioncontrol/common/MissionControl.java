@@ -1,6 +1,8 @@
 package pixlepix.missioncontrol.common;
 
+import pixlepix.missioncontrol.blocks.FocusedInventoryLink;
 import pixlepix.missioncontrol.blocks.InventoryLink;
+import pixlepix.missioncontrol.blocks.ProximityInventoryLink;
 import pixlepix.missioncontrol.blocks.SelectiveInventoryLink;
 import pixlepix.missioncontrol.common.helper.*;
 import cpw.mods.fml.common.Mod;
@@ -16,6 +18,10 @@ public class MissionControl {
 	public static InventoryLink inventoryLink;
 
 	public static SelectiveInventoryLink selectiveInventoryLink;
+
+	public static FocusedInventoryLink focusedInventoryLink;
+
+	public static ProximityInventoryLink proximityInventoryLink;
 	public static MissionControlTab tab=new MissionControlTab();
 	
 
@@ -28,6 +34,10 @@ public class MissionControl {
 		this.inventoryLink=new InventoryLink(1215);
 
 		this.selectiveInventoryLink=new SelectiveInventoryLink(1216);
+
+		this.proximityInventoryLink=new ProximityInventoryLink(1217);
+
+		this.focusedInventoryLink=new FocusedInventoryLink(1218);
 	}
 
 	@EventHandler

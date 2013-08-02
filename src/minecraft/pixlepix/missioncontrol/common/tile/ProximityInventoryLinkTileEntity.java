@@ -7,7 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 
 public class ProximityInventoryLinkTileEntity extends TileEntity implements IInventory {
 	public EntityPlayer getPlayer(){
-		return null;
+		return worldObj.getClosestPlayer(xCoord, yCoord, zCoord, 10);
 	}
 	@Override
 	public int getSizeInventory() {
@@ -17,11 +17,9 @@ public class ProximityInventoryLinkTileEntity extends TileEntity implements IInv
 
 	@Override
 	public ItemStack getStackInSlot(int i) {
-		if(player==null){
-			return null;
-		}
 		
-		EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
+		
+		EntityPlayer entityPlayer=getPlayer();
 		if(entityPlayer==null){
 			return null;
 		}
@@ -30,11 +28,8 @@ public class ProximityInventoryLinkTileEntity extends TileEntity implements IInv
 
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
-		if(player==null){
-			return null;
-		}
 		
-		EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
+		EntityPlayer entityPlayer=getPlayer();
 		if(entityPlayer==null){
 			return null;
 		}
@@ -50,11 +45,9 @@ public class ProximityInventoryLinkTileEntity extends TileEntity implements IInv
 	@Override
 	public void setInventorySlotContents(int i, ItemStack itemstack) {
 		
-		if(player==null){
-			return;
-		}
 		
-		EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
+		
+		EntityPlayer entityPlayer=getPlayer();
 		if(entityPlayer==null){
 			return;
 		}
@@ -64,7 +57,7 @@ public class ProximityInventoryLinkTileEntity extends TileEntity implements IInv
 	@Override
 	public String getInvName() {
 		// TODO Auto-generated method stub
-		return "Inventory Link";
+		return "Proximity Inventory Link";
 	}
 
 	@Override
@@ -80,11 +73,9 @@ public class ProximityInventoryLinkTileEntity extends TileEntity implements IInv
 
 	@Override
 	public void onInventoryChanged() {
-		if(player==null){
-			return;
-		}
 		
-		EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
+		
+		EntityPlayer entityPlayer=getPlayer();
 		if(entityPlayer==null){
 			return;
 		}
