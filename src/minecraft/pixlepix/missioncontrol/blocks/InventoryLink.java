@@ -67,9 +67,7 @@ public class InventoryLink extends Block {
 		{
 			
 			InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity) tile;
-			//if(tileEntity.player==null){
-			//	return;
-			//}
+			
 			
 				 int l = par1World.getBlockMetadata(par2, par3, par4);
 				 if(l!=1){
