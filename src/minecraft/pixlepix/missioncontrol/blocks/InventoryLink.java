@@ -72,6 +72,9 @@ public class InventoryLink extends Block {
 			//}
 			
 				 int l = par1World.getBlockMetadata(par2, par3, par4);
+				 if(l==0){
+					 return;
+				 }
 		            float f = (float)par2 + 0.8F;
 		            float f1 = (float)par3 + 0.0F + par5Random.nextFloat() * 6.0F / 16.0F;
 		            float f2 = (float)par4 + 0.5F;
