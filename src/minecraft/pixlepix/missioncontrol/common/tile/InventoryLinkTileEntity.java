@@ -15,7 +15,10 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public String player;
 	@Override
 	public int getSizeInventory() {
-		
+		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
+			System.out.println("Redstone Halt");
+			return 0;
+		}
 		return 31;
 	}
 
