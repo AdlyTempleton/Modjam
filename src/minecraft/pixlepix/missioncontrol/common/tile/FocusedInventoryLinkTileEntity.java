@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
-public class FocusedInventoryLinkTileEntity extends TileEntity implements IInventory {
+public class FocusedInventoryLinkTileEntity extends InventoryLinkTileEntity implements IInventory {
 	public String player;
 	public Item target;
 	@Override

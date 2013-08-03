@@ -2,6 +2,7 @@ package pixlepix.missioncontrol.common.tile;
 
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
@@ -24,4 +25,14 @@ public class InputInventoryLinkTileEntity extends TileEntity {
 			dropItem(stack);
 		}
 	}
+	@Override
+	 public void readFromNBT(NBTTagCompound nbt){
+		super.readFromNBT(nbt);
+		this.player=nbt.getString("Player");
+	 }
+	 @Override
+	 public void writeToNBT(NBTTagCompound nbt){
+		 super.writeToNBT(nbt);
+		 nbt.setString("Player", player);
+	 }
 }

@@ -6,12 +6,13 @@ import java.util.Iterator;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
-public class DeathInventoryLinkTileEntity extends InventoryLinkTileEntity {
+public class DeathInventoryLinkTileEntity extends TileEntity {
 	public String player;
 	public int timeToCollect;
 	public ArrayList<EntityItem> drops;
@@ -42,4 +43,14 @@ public class DeathInventoryLinkTileEntity extends InventoryLinkTileEntity {
 			drops=null;
 		}
 	}
+	@Override
+	 public void readFromNBT(NBTTagCompound nbt){
+		super.readFromNBT(nbt);
+		this.player=nbt.getString("Player");
+	 }
+	 @Override
+	 public void writeToNBT(NBTTagCompound nbt){
+		 super.writeToNBT(nbt);
+		 nbt.setString("Player", player);
+	 }
 }
