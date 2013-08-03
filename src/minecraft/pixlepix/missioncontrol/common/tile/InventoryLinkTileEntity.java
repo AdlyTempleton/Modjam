@@ -26,6 +26,16 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 		}
 		return entityPlayer.inventory.getStackInSlot(i);
 	}
+	@Override
+	public void updateEntity(){
+		if (this.ticks % 3 == 0)
+		{
+			for (EntityPlayer player : this.playersUsing)
+			{
+				PacketDispatcher.sendPacketToPlayer(getDescriptionPacket(), (Player) player);
+			}
+		}
+	}
 
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
