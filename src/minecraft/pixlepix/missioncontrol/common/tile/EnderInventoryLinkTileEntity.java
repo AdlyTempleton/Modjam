@@ -5,7 +5,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
-public class EnderInventoryLinkTileEntity extends TileEntity implements IInventory {
+public class EnderInventoryLinkTileEntity extends InventoryLinkTileEntity implements IInventory {
 	public String player;
 	@Override
 	public int getSizeInventory() {

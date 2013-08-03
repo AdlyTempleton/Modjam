@@ -11,7 +11,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 
-public class DeathInventoryLinkTileEntity extends TileEntity {
+public class DeathInventoryLinkTileEntity extends InventoryLinkTileEntity {
 	public String player;
 	public int timeToCollect;
 	public ArrayList<EntityItem> drops;

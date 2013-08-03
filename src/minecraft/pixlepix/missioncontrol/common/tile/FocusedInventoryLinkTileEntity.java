@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
 public class FocusedInventoryLinkTileEntity extends TileEntity implements IInventory {
@@ -156,5 +157,16 @@ public class FocusedInventoryLinkTileEntity extends TileEntity implements IInven
 	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
 		return true;
 	}
+	
+	@Override
+	 public void readFromNBT(NBTTagCompound nbt){
+		super.readFromNBT(nbt);
+		this.player=nbt.getString("Player");
+	 }
+	 @Override
+	 public void writeToNBT(NBTTagCompound nbt){
+		 super.writeToNBT(nbt);
+		 nbt.setInt("Player", player);
+	 }
 
 }
