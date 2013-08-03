@@ -3,12 +3,14 @@ package pixlepix.missioncontrol.common.helper;
 import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ForgeDirection;
 
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
 
 import pixlepix.missioncontrol.common.tile.DeathInventoryLinkTileEntity;
 import pixlepix.missioncontrol.common.tile.InputInventoryLinkTileEntity;
@@ -77,6 +79,11 @@ public class HeadSpecialRenderer extends TileEntitySpecialRenderer {
                         GL11.glRotatef(-90, 0, 1, 0);
                         break;
                 }
+                float f4 = 0.0625F;
+                GL11.glEnable(GL12.GL_RESCALE_NORMAL);
+                GL11.glScalef(-1.0F, -1.0F, 1.0F);
+                GL11.glEnable(GL11.GL_ALPHA_TEST);
+                GL11.glPopMatrix();
             }
 	    }
 }
