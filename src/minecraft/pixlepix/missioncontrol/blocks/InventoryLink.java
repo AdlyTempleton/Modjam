@@ -1,5 +1,7 @@
 package pixlepix.missioncontrol.blocks;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -73,26 +75,15 @@ public class InventoryLink extends Block {
 				float var10 = 0.52F;
 				float var11 = par5Random.nextFloat() * 0.6F - 0.3F;
 
-				if (metadata == 3)
-				{
-					par1World.spawnParticle("smoke", var7 - var10, var8, var9 + var11, 0.0D, 0.0D, 0.0D);
-					par1World.spawnParticle("flame", var7 - var10, var8, var9 + var11, 0.0D, 0.0D, 0.0D);
-				}
-				else if (metadata == 2)
-				{
-					par1World.spawnParticle("smoke", var7 + var10, var8, var9 + var11, 0.0D, 0.0D, 0.0D);
-					par1World.spawnParticle("flame", var7 + var10, var8, var9 + var11, 0.0D, 0.0D, 0.0D);
-				}
-				else if (metadata == 1)
-				{
-					par1World.spawnParticle("smoke", var7 + var11, var8, var9 - var10, 0.0D, 0.0D, 0.0D);
-					par1World.spawnParticle("flame", var7 + var11, var8, var9 - var10, 0.0D, 0.0D, 0.0D);
-				}
-				else if (metadata == 0)
-				{
-					par1World.spawnParticle("smoke", var7 + var11, var8, var9 + var10, 0.0D, 0.0D, 0.0D);
-					par1World.spawnParticle("flame", var7 + var11, var8, var9 + var10, 0.0D, 0.0D, 0.0D);
-				}
+				
+					par1World.spawnParticle("reddust", var7 - var10, var8, var9 + var11, 0.0D, 0.0D, 0.0D);
+				
+					par1World.spawnParticle("reddust", var7 + var10, var8, var9 + var11, 0.0D, 0.0D, 0.0D);
+				
+					par1World.spawnParticle("reddust", var7 + var11, var8, var9 - var10, 0.0D, 0.0D, 0.0D);
+				
+					par1World.spawnParticle("reddust", var7 + var11, var8, var9 + var10, 0.0D, 0.0D, 0.0D);
+				
 			}
 		}
 	}
