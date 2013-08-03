@@ -1,5 +1,7 @@
 package pixlepix.missioncontrol.blocks;
 
+import java.util.Random;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -9,6 +11,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import pixlepix.missioncontrol.common.helper.MissionControlTab;
 import pixlepix.missioncontrol.common.tile.FocusedInventoryLinkTileEntity;
+import pixlepix.missioncontrol.common.tile.InventoryLinkTileEntity;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -29,6 +32,43 @@ public class FocusedInventoryLink extends Block {
         GameRegistry.registerBlock(this, "Focused Inventory Link");
 
         GameRegistry.registerTileEntity(FocusedInventoryLinkTileEntity.class, "Focused Inventory Link");
+	}
+	@Override
+	public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
+	{
+		TileEntity tile = par1World.getBlockTileEntity(par2,par3,par4);
+
+		if (tile instanceof InventoryLinkTileEntity)
+		{
+			
+			InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity) tile;
+			
+			
+				 int l = par1World.getBlockMetadata(par2, par3, par4);
+				 if(l!=1){
+					 return;
+				 }
+		            float f = (float)par2 + 0.8F;
+		            float f1 = (float)par3 + 0.2F + par5Random.nextFloat() * 6.0F / 16.0F;
+		            float f2 = (float)par4 + 0.5F;
+		            float f3 = 0.52F;
+		            float f4 = par5Random.nextFloat() * 0.6F - 0.3F;
+
+		           
+		                par1World.spawnParticle("townaura", (double)(f - f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
+		                par1World.spawnParticle("reddust", (double)(f - f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
+		            
+		                par1World.spawnParticle("townaura", (double)(f + f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
+		                par1World.spawnParticle("reddust", (double)(f + f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
+		            
+		                par1World.spawnParticle("townaura", (double)(f + f4), (double)f1, (double)(f2 - f3), 0.0D, 0.0D, 0.0D);
+		                par1World.spawnParticle("reddust", (double)(f + f4), (double)f1, (double)(f2 - f3), 0.0D, 0.0D, 0.0D);
+		            
+		                par1World.spawnParticle("townaura", (double)(f + f4), (double)f1, (double)(f2 + f3), 0.0D, 0.0D, 0.0D);
+		                par1World.spawnParticle("reddust", (double)(f + f4), (double)f1, (double)(f2 + f3), 0.0D, 0.0D, 0.0D);
+		            
+		          
+		}
 	}
 	@Override
 	@SideOnly(Side.CLIENT)
