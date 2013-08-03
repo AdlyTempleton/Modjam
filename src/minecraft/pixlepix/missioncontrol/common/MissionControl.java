@@ -20,7 +20,6 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = "missioncontrol", name = "Mission Control", version = "0.2.0")
-@NetworkMod(clientSideRequired = true, serverSideRequired = false, channels = { "MissionCont" }, packetHandler = PacketHandler.class)
 public class MissionControl {
 	public static InventoryLink inventoryLink;
 
