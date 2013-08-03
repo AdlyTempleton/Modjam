@@ -30,6 +30,18 @@ public class MissionControlItemBlock extends ItemBlock {
 
 				list.add(EnumColor.ORANGE+"Use pipes/hoppers to access the inventory");
 			}
+
+			if(par1ItemStack.itemID==Config.selectiveInventoryLink){
+				list.add(EnumColor.ORANGE+"Accesses part of the inventory");
+
+				list.add(EnumColor.ORANGE+"Shift click to cycle modes");
+			}
+
+			if(par1ItemStack.itemID==Config.focusedInventoryLink){
+				list.add(EnumColor.ORANGE+"Accesses one item type from an inventory");
+
+				list.add(EnumColor.ORANGE+"Left click to configura target");
+			}
 		}
 	}
 }
