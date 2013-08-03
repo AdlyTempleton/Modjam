@@ -61,7 +61,7 @@ public class InventoryLink extends Block {
 	@Override
 	public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
 	{
-		TileEntity tile = par1World.getBlockTileEntity(x, y, z);
+		TileEntity tile = par1World.getBlockTileEntity(par2,par3,par4);
 
 		if (tile instanceof InventoryLinkTileEntity)
 		{
