@@ -33,7 +33,11 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	}
 	@Override
 	public void updateEntity(){
-		
+		if(this.worldObj.getTotalWorldTime()%20==0){
+			if(player!=null&&worldObj.getPlayerEntityByName(player)!=null){
+				
+			}
+		}
 	}
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
