@@ -14,6 +14,9 @@ public class FocusedInventoryLinkTileEntity extends InventoryLinkTileEntity impl
 	public Item target;
 	@Override
 	public int getSizeInventory() {
+		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
+			return 0;
+		}
 		ItemStack[] stacks=getRelaventStacks();
 		if(stacks==null){
 			return 0;

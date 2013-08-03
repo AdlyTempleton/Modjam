@@ -11,7 +11,9 @@ public class ProximityInventoryLinkTileEntity extends InventoryLinkTileEntity im
 	}
 	@Override
 	public int getSizeInventory() {
-		
+		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
+			return 0;
+		}
 		return 31;
 	}
 

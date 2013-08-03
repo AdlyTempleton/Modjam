@@ -9,7 +9,9 @@ public class EnderInventoryLinkTileEntity extends InventoryLinkTileEntity implem
 	public String player;
 	@Override
 	public int getSizeInventory() {
-		
+		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
+			return 0;
+		}
 		return 31;
 	}
 
