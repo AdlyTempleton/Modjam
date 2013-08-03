@@ -5,7 +5,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
-public class ProximityInventoryLinkTileEntity extends TileEntity implements IInventory {
+public class ProximityInventoryLinkTileEntity extends InventoryLinkTileEntity implements IInventory {
 	public EntityPlayer getPlayer(){
 		return worldObj.getClosestPlayer(xCoord, yCoord, zCoord, 10);
 	}

@@ -5,7 +5,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
-public class SelectiveInventoryLinkTileEntity extends TileEntity implements IInventory {
+public class SelectiveInventoryLinkTileEntity extends InventoryLinkTileEntity implements IInventory {
 	public String player;
 	public byte mode=0;
 	@Override
