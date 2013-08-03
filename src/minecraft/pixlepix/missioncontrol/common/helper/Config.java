@@ -1,5 +1,6 @@
 package pixlepix.missioncontrol.common.helper;
 
+import net.minecraftforge.common.Configuration;
 import net.minecraftforge.event.ForgeSubscribe;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
@@ -21,9 +22,13 @@ public class Config {
 	public static int inputInventoryLink=1221;
 
 	public static int deathInventoryLink=1222;
-	
+
+	public static Configuration config;
 	@ForgeSubscribe
 	public static void configure(FMLPreInitializationEvent event){
-		
+
+		config = new Configuration(event.getSuggestedConfigurationFile());
+		inventoryLink=config.
+				
 	}
 }
