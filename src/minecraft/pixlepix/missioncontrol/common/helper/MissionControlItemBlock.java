@@ -25,7 +25,9 @@ public class MissionControlItemBlock extends ItemBlock {
 			list.add("Hold " + EnumColor.AQUA + "shift" + EnumColor.GREY + " for more details.");
 		}
 		else {
-			
+			if(par1ItemStack.itemID==Config.inventoryLink){
+				
+			}
 		}
 	}
 }
