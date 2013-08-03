@@ -39,6 +39,7 @@ public class HeadSpecialRenderer extends TileEntitySpecialRenderer {
 	    	
 	    	String username=this.getPlayerName(tileEntity);
             EntityPlayer player=tileEntity.worldObj.getPlayerEntityByName(username);
+            
 	    	for (int side = 2; side < 6; side++)
             {
 	    		ForgeDirection direction = ForgeDirection.getOrientation(side);
