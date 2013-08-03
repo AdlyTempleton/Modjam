@@ -113,10 +113,14 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
 		return true;
 	}
+	@Override
 	 public void readFromNBT(NBTTagCompound nbt){
+		super.readFromNBT(nbt);
 		this.player=nbt.getString("Player");
 	 }
+	 @Override
 	 public void writeToNBT(NBTTagCompound nbt){
+		 super.writeToNBT(nbt);
 		 nbt.setString("Player", player);
 	 }
 
