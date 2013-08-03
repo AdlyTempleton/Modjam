@@ -42,7 +42,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 				if(!(player instanceof EntityPlayer)){
 					break;
 				}
-				
+				EntityPlayer entityPlayer=(EntityPlayer) player;
 				PacketDispatcher.sendPacketToPlayer(getDescriptionPacket(), (Player) player);
 			}
 		}
