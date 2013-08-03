@@ -28,7 +28,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	}
 	@Override
 	public void updateEntity(){
-		if (this.ticks % 3 == 0)
+		if (this.worldObj.getTotalWorldTime() % 3 == 0)
 		{
 			for (EntityPlayer player : this.playersUsing)
 			{
