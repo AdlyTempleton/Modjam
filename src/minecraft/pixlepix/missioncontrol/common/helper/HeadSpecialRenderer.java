@@ -43,14 +43,13 @@ public class HeadSpecialRenderer extends TileEntitySpecialRenderer {
             EntityPlayer player=tileEntity.worldObj.getPlayerEntityByName(username);
             ResourceLocation resourcelocation = AbstractClientPlayer.field_110314_b;
 
-            if (par7Str != null && par7Str.length() > 0)
+            if (username != null && username.length() > 0)
             {
-                resourcelocation = AbstractClientPlayer.func_110305_h(par7Str);
-                AbstractClientPlayer.func_110304_a(resourcelocation, par7Str);
+                resourcelocation = AbstractClientPlayer.func_110305_h(username);
+                AbstractClientPlayer.func_110304_a(resourcelocation, username);
             }
-
+            
             this.func_110628_a(resourcelocation);
-            break;
 	    	for (int side = 2; side < 6; side++)
             {
 	    		ForgeDirection direction = ForgeDirection.getOrientation(side);
