@@ -11,6 +11,9 @@ public class SelectiveInventoryLinkTileEntity extends InventoryLinkTileEntity im
 	public byte mode=0;
 	@Override
 	public int getSizeInventory() {
+		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
+			return 0;
+		}
 		switch(mode){
 			case 0:
 				return 9;

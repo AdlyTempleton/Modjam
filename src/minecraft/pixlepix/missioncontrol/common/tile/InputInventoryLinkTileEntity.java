@@ -19,6 +19,9 @@ public class InputInventoryLinkTileEntity extends TileEntity {
 	}
 	@ForgeSubscribe
 	public void onDrop(ItemTossEvent e){
+		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
+			return;
+		}
 		if(e.player.username.equals(player)){
 			ItemStack stack=e.entityItem.getEntityItem();
 			e.setCanceled(true);

@@ -19,6 +19,9 @@ public class OutputInventoryLinkTileEntity extends TileEntity {
 	}
 	@ForgeSubscribe
 	public void onPickup(EntityItemPickupEvent e){
+		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
+			return;
+		}
 		if(e.entityPlayer.username.equals(player)){
 			ItemStack stack=e.item.getEntityItem();
 			e.item.setDead();

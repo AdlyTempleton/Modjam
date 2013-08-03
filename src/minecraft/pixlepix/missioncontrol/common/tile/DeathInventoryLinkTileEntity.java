@@ -24,6 +24,9 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 	}
 	@ForgeSubscribe
 	public void onPickup(LivingDropsEvent e){
+		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
+			return;
+		}
 		if(e.entity instanceof EntityPlayer&&((EntityPlayer)e.entity).username.equals(player)){
 			drops=e.drops;
 			timeToCollect=400;
