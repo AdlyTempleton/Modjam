@@ -9,6 +9,7 @@ import pixlepix.missioncontrol.blocks.OutputInventoryLink;
 import pixlepix.missioncontrol.blocks.ProximityInventoryLink;
 import pixlepix.missioncontrol.blocks.SelectiveInventoryLink;
 import pixlepix.missioncontrol.common.helper.CommonProxy;
+import pixlepix.missioncontrol.common.helper.Config;
 import pixlepix.missioncontrol.common.helper.MissionControlTab;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -46,6 +47,7 @@ public class MissionControl {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		Config.configure(event);
 		this.inventoryLink=new InventoryLink(1215);
 
 		this.selectiveInventoryLink=new SelectiveInventoryLink(1216);

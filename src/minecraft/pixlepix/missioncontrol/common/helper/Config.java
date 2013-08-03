@@ -24,7 +24,6 @@ public class Config {
 	public static int deathInventoryLink=1222;
 
 	public static Configuration config;
-	@ForgeSubscribe
 	public static void configure(FMLPreInitializationEvent event){
 
 		config = new Configuration(event.getSuggestedConfigurationFile());
@@ -40,9 +39,9 @@ public class Config {
 
 		outputInventoryLink=config.getBlock("output Inventory Link", outputInventoryLink).getInt();
 
-		selectiveInventoryLink=config.getBlock("selective Inventory Link", selectiveInventoryLink).getInt();
+		inputInventoryLink=config.getBlock("input Inventory Link", inputInventoryLink).getInt();
 
-		selectiveInventoryLink=config.getBlock("selective Inventory Link", selectiveInventoryLink).getInt();
+		deathInventoryLink=config.getBlock("death Inventory Link", deathInventoryLink).getInt();
 		
 				
 	}
