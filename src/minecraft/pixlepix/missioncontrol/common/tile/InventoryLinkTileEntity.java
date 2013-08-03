@@ -39,6 +39,9 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 			
 			for (Object player : players)
 			{
+				if(!(player instanceof EntityPlayer)){
+					break;
+				}
 				
 				PacketDispatcher.sendPacketToPlayer(getDescriptionPacket(), (Player) player);
 			}
