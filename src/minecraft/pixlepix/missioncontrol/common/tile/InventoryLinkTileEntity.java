@@ -33,7 +33,11 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public void updateEntity(){
 		if (this.worldObj.getTotalWorldTime() % 3 == 0)
 		{
-			for (EntityPlayer player : ))
+			
+			
+			EntityPlayer[] players=this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, AxisAlignedBB.getBoundingBox(xCoord-20, yCoord-20, zCoord-20, xCoord+20, yCoord+20, zCoord+20));
+			
+			for (EntityPlayer player : using))
 			{
 				PacketDispatcher.sendPacketToPlayer(getDescriptionPacket(), (Player) player);
 			}
