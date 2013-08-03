@@ -60,7 +60,6 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 			return null;
 		}
 
-		worldObj.setBlockMetadataWithNotify(xCoord,yCoord,zCoord,3, 2);
 		return entityPlayer.inventory.decrStackSize(i, j);
 	}
 
