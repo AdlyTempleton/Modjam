@@ -31,31 +31,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 		}
 		return entityPlayer.inventory.getStackInSlot(i);
 	}
-	@Override
-	public void updateEntity(){
-		if (this.worldObj.getTotalWorldTime() % 40 == 0)
-		{
-			
-			
-			Object[] players=this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, AxisAlignedBB.getBoundingBox(xCoord-20, yCoord-20, zCoord-20, xCoord+20, yCoord+20, zCoord+20)).toArray();
-			
-			for (Object player : players)
-			{
-				if(!(player instanceof EntityPlayer)){
-					break;
-				}
-				PacketDispatcher.sendPacketToPlayer(getDescriptionPacket(), (Player) player);
-			}
-		}
-	}
 
-	
-	@Override
-	public Packet getDescriptionPacket()
-	{
-		return PacketManager.getPacket(MissionControl.CHANNEL, this, this.player);
-	}
-	
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
 		if(player==null){
