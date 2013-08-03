@@ -42,6 +42,12 @@ public class MissionControlItemBlock extends ItemBlock {
 
 				list.add(EnumColor.ORANGE+"Left click to configura target");
 			}
+
+			if(par1ItemStack.itemID==Config.proximityInventoryLink){
+				list.add(EnumColor.ORANGE+"Provides access to the nearest players inventory");
+
+				list.add(EnumColor.ORANGE+"Ten block maximum radius");
+			}
 		}
 	}
 }
