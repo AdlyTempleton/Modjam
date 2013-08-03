@@ -23,7 +23,7 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 		worldObj.spawnEntityInWorld(new EntityItem(worldObj,xCoord+0.5,yCoord+2.5,zCoord+0.5,item));
 	}
 	@ForgeSubscribe
-	public void onPickup(LivingDropsEvent e){
+	public void onPickup(PlayerDropsEvent e){
 		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
 			return;
 		}
