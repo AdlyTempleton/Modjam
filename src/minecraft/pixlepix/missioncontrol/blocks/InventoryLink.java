@@ -65,9 +65,12 @@ public class InventoryLink extends Block {
 
 		if (tile instanceof InventoryLinkTileEntity)
 		{
+			
 			InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity) tile;
-			if (tileEntity.player!=null)
-			{
+			if(tileEntity.player==null){
+				return;
+			}
+			
 				 int l = par1World.getBlockMetadata(par2, par3, par4);
 		            float f = (float)par2 + 0.5F;
 		            float f1 = (float)par3 + 0.0F + par5Random.nextFloat() * 6.0F / 16.0F;
@@ -88,7 +91,7 @@ public class InventoryLink extends Block {
 		                par1World.spawnParticle("smoke", (double)(f + f4), (double)f1, (double)(f2 + f3), 0.0D, 0.0D, 0.0D);
 		                par1World.spawnParticle("reddust", (double)(f + f4), (double)f1, (double)(f2 + f3), 0.0D, 0.0D, 0.0D);
 		            
-			}
+			
 		}
 	}
 	
