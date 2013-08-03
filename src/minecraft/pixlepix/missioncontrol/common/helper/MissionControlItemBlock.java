@@ -26,7 +26,6 @@ public class MissionControlItemBlock extends ItemBlock {
 		}
 		else {
 			
-			System.out.println(par1ItemStack.itemID);
 		}
 	}
 }

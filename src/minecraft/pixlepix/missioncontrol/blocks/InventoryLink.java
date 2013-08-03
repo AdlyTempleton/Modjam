@@ -29,7 +29,7 @@ public class InventoryLink extends Block {
         LanguageRegistry.addName(this, "Inventory Link");
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
-        GameRegistry.registerBlock(this, MissionControlItemBlock.class);
+        GameRegistry.registerBlock(this, MissionControlItemBlock.class,"Inventory Link");
         GameRegistry.registerTileEntity(InventoryLinkTileEntity.class, "Inventory Link");
 	}
 	@Override
