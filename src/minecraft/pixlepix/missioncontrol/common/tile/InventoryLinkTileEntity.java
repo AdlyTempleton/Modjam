@@ -1,13 +1,14 @@
 package pixlepix.missioncontrol.common.tile;
 
-import ibxm.Player;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.packet.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import cpw.mods.fml.common.network.PacketDispatcher;
+import cpw.mods.fml.common.network.Player;
 
 public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public String player;
@@ -42,12 +43,18 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 				if(!(player instanceof EntityPlayer)){
 					break;
 				}
-				EntityPlayer entityPlayer=(EntityPlayer) player;
 				PacketDispatcher.sendPacketToPlayer(getDescriptionPacket(), (Player) player);
 			}
 		}
 	}
 
+	
+	@Override
+	public Packet getDescriptionPacket()
+    {
+        return null;
+    }
+	
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
 		if(player==null){
