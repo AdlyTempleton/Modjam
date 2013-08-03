@@ -163,7 +163,7 @@ public class SelectiveInventoryLinkTileEntity extends InventoryLinkTileEntity im
 	 @Override
 	 public void writeToNBT(NBTTagCompound nbt){
 		 super.writeToNBT(nbt);
-		 nbt.setString("Player", player);
+		 nbt.setByte("Mode", mode);
 	 }
 
 }
