@@ -161,12 +161,12 @@ public class FocusedInventoryLinkTileEntity extends TileEntity implements IInven
 	@Override
 	 public void readFromNBT(NBTTagCompound nbt){
 		super.readFromNBT(nbt);
-		this.player=nbt.getString("Player");
+		this.target=Item.itemsList[nbt.getInteger("Item")];
 	 }
 	 @Override
 	 public void writeToNBT(NBTTagCompound nbt){
 		 super.writeToNBT(nbt);
-		 nbt.setInt("Player", player);
+		 nbt.setInteger("Item", target.itemID);
 	 }
 
 }
