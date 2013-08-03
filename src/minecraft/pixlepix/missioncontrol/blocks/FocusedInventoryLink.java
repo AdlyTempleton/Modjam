@@ -29,7 +29,7 @@ public class FocusedInventoryLink extends Block {
         LanguageRegistry.addName(this, "Focused Inventory Link");
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
-        GameRegistry.registerBlock(this, "Focused Inventory Link");
+        GameRegistry.registerBlock(this, MissionControlItemBlock.class, "Focused Inventory Link");
 
         GameRegistry.registerTileEntity(FocusedInventoryLinkTileEntity.class, "Focused Inventory Link");
 	}

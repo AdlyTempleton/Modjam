@@ -29,7 +29,7 @@ public class SelectiveInventoryLink extends Block {
         LanguageRegistry.addName(this, "Selective Inventory Link");
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
-        GameRegistry.registerBlock(this, "Selective Inventory Link");
+        GameRegistry.registerBlock(this, MissionControlItemBlock.class, "Selective Inventory Link");
 
         GameRegistry.registerTileEntity(SelectiveInventoryLinkTileEntity.class, "Selective Inventory Link");
 	}

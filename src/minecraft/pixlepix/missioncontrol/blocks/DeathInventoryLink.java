@@ -26,7 +26,7 @@ public class DeathInventoryLink extends Block {
         LanguageRegistry.addName(this, "Death Inventory Link");
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
-        GameRegistry.registerBlock(this, "Death Inventory Link");
+        GameRegistry.registerBlock(this, MissionControlItemBlock.class, "Death Inventory Link");
         GameRegistry.registerTileEntity(DeathInventoryLinkTileEntity.class, "Death Inventory Link");
 	}
 	@Override

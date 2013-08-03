@@ -29,7 +29,7 @@ public class ProximityInventoryLink extends Block {
         LanguageRegistry.addName(this, "Proximity Inventory Link");
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
-        GameRegistry.registerBlock(this, "Proximity Inventory Link");
+        GameRegistry.registerBlock(this, MissionControlItemBlock.class, "Proximity Inventory Link");
         GameRegistry.registerTileEntity(ProximityInventoryLinkTileEntity.class, "Proximity Inventory Link");
 	}
 	@Override

@@ -26,7 +26,7 @@ public class OutputInventoryLink extends Block {
         LanguageRegistry.addName(this, "Output Inventory Link");
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
-        GameRegistry.registerBlock(this, "Output Inventory Link");
+        GameRegistry.registerBlock(this, MissionControlItemBlock.class, "Output Inventory Link");
         GameRegistry.registerTileEntity(OutputInventoryLinkTileEntity.class, "Output Inventory Link");
 	}
 	@Override
