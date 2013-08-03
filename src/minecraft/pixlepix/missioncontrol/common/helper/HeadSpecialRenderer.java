@@ -2,6 +2,7 @@ package pixlepix.missioncontrol.common.helper;
 
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.ForgeDirection;
 
@@ -35,6 +36,9 @@ public class HeadSpecialRenderer extends TileEntitySpecialRenderer {
 	    @Override
 	    public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float var8)
 	    {
+	    	
+	    	String username=this.getPlayerName(tileEntity);
+            EntityPlayer player=tileEntity.worldObj.getPlayerEntityByName(username);
 	    	for (int side = 2; side < 6; side++)
             {
 	    		ForgeDirection direction = ForgeDirection.getOrientation(side);
