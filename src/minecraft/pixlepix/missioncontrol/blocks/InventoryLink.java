@@ -64,7 +64,7 @@ public class InventoryLink extends Block {
 		if (tile instanceof InventoryLinkTileEntity)
 		{
 			InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity) tile;
-			if (tileEntity.generateWatts > 0)
+			if (tileEntity.player!=null &&par1World.getPlayerEntityByName(tileEntity.player)!=null)
 			{
 				int metadata = par1World.getBlockMetadata(x, y, z);
 				float var7 = x + 0.5F;
