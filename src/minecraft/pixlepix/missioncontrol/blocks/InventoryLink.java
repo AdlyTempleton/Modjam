@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import pixlepix.missioncontrol.common.helper.MissionControlItemBlock;
 import pixlepix.missioncontrol.common.helper.MissionControlTab;
 import pixlepix.missioncontrol.common.tile.InventoryLinkTileEntity;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -28,7 +29,7 @@ public class InventoryLink extends Block {
         LanguageRegistry.addName(this, "Inventory Link");
         MinecraftForge.setBlockHarvestLevel(this, "pickaxe", 3);
 
-        GameRegistry.registerBlock(this, "Inventory Link");
+        GameRegistry.registerBlock(this, MissionControlItemBlock.class);
         GameRegistry.registerTileEntity(InventoryLinkTileEntity.class, "Inventory Link");
 	}
 	@Override
