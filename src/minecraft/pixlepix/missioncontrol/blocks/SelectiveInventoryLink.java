@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
+import pixlepix.missioncontrol.common.helper.MissionControlItemBlock;
 import pixlepix.missioncontrol.common.helper.MissionControlTab;
 import pixlepix.missioncontrol.common.tile.InventoryLinkTileEntity;
 import pixlepix.missioncontrol.common.tile.SelectiveInventoryLinkTileEntity;
