@@ -28,7 +28,7 @@ public class MissionControlItemBlock extends ItemBlock {
 			if(par1ItemStack.itemID==Config.inventoryLink){
 				list.add(EnumColor.ORANGE+"Allows remote access to a player's inventory");
 
-				list.add(EnumColor.ORANGE+"Allows remote access to a player's inventory");
+				list.add(EnumColor.ORANGE+"Use pipes/hoppers to access the inventory");
 			}
 		}
 	}
