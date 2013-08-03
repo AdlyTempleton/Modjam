@@ -72,7 +72,7 @@ public class InventoryLink extends Block {
 			//}
 			
 				 int l = par1World.getBlockMetadata(par2, par3, par4);
-				 if(l==0){
+				 if(l!=1){
 					 return;
 				 }
 		            float f = (float)par2 + 0.8F;
