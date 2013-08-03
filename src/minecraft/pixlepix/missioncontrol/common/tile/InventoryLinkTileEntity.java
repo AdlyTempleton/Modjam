@@ -3,6 +3,7 @@ package pixlepix.missioncontrol.common.tile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
 public class InventoryLinkTileEntity extends TileEntity implements IInventory {
@@ -112,5 +113,11 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
 		return true;
 	}
+	 public void readFromNBT(NBTTagCompound nbt){
+		 
+	 }
+	 public void writeToNBT(NBTTagCompound nbt){
+		 
+	 }
 
 }
