@@ -54,9 +54,20 @@ public class MissionControlItemBlock extends ItemBlock {
 			}
 			if(par1ItemStack.itemID==Config.outputInventoryLink){
 				list.add(EnumColor.ORANGE+"Collects all items a player picks up");
+
+				list.add(EnumColor.ORANGE+"Drops items above the block");
 			}
 			if(par1ItemStack.itemID==Config.inputInventoryLink){
 				list.add(EnumColor.ORANGE+"Collects all items a player drops");
+
+				list.add(EnumColor.ORANGE+"Drops items above the block");
+			}
+			if(par1ItemStack.itemID==Config.deathInventoryLink){
+				list.add(EnumColor.ORANGE+"Collects all items a player drops on death");
+
+				list.add(EnumColor.ORANGE+"20 second wait before items are collected");
+
+				list.add(EnumColor.ORANGE+"Drops items above the block");
 			}
 
 		}
