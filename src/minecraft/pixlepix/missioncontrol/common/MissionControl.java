@@ -48,21 +48,21 @@ public class MissionControl {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		Config.configure(event);
-		this.inventoryLink=new InventoryLink(1215);
+		this.inventoryLink=new InventoryLink(Config.inventoryLink);
 
-		this.selectiveInventoryLink=new SelectiveInventoryLink(1216);
+		this.selectiveInventoryLink=new SelectiveInventoryLink(Config.selectiveInventoryLink);
 
-		this.proximityInventoryLink=new ProximityInventoryLink(1217);
+		this.proximityInventoryLink=new ProximityInventoryLink(Config.proximityInventoryLink);
 
-		this.focusedInventoryLink=new FocusedInventoryLink(1218);
+		this.focusedInventoryLink=new FocusedInventoryLink(Config.focusedInventoryLink);
 
-		this.enderInventoryLink=new EnderInventoryLink(1219);
+		this.enderInventoryLink=new EnderInventoryLink(Config.enderInventoryLink);
 
-		this.outputInventoryLink=new OutputInventoryLink(1220);
+		this.outputInventoryLink=new OutputInventoryLink(Config.outputInventoryLink);
 
-		this.inputInventoryLink=new InputInventoryLink(1221);
+		this.inputInventoryLink=new InputInventoryLink(Config.inputInventoryLink);
 
-		this.deathInventoryLink=new DeathInventoryLink(1222);
+		this.deathInventoryLink=new DeathInventoryLink(Config.deathInventoryLink);
 	}
 
 	@EventHandler
