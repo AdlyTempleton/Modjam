@@ -48,6 +48,17 @@ public class MissionControlItemBlock extends ItemBlock {
 
 				list.add(EnumColor.ORANGE+"Ten block maximum radius");
 			}
+
+			if(par1ItemStack.itemID==Config.enderInventoryLink){
+				list.add(EnumColor.ORANGE+"Provides access to the ender chest of a player");
+			}
+			if(par1ItemStack.itemID==Config.outputInventoryLink){
+				list.add(EnumColor.ORANGE+"Collects all items a player picks up");
+			}
+			if(par1ItemStack.itemID==Config.inputInventoryLink){
+				list.add(EnumColor.ORANGE+"Collects all items a player drops");
+			}
+
 		}
 	}
 }
