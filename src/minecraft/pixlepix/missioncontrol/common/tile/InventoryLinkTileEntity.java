@@ -7,6 +7,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import pixlepix.missioncontrol.common.MissionControl;
 import cpw.mods.fml.common.network.PacketDispatcher;
 import cpw.mods.fml.common.network.Player;
 
@@ -51,9 +52,9 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	
 	@Override
 	public Packet getDescriptionPacket()
-    {
-        return null;
-    }
+	{
+		return PacketManager.getPacket(MissionControl.CHANNEL, this, this.player);
+	}
 	
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
