@@ -59,7 +59,7 @@ public class InventoryLink extends Block {
 		return true;
 	}
 	@Override
-	public void randomDisplayTick(World par1World, int x, int y, int z, Random par5Random)
+	public void randomDisplayTick(World par1World, int par2, int par3, int par4, Random par5Random)
 	{
 		TileEntity tile = par1World.getBlockTileEntity(x, y, z);
 
@@ -68,22 +68,33 @@ public class InventoryLink extends Block {
 			InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity) tile;
 			if (tileEntity.player!=null &&par1World.getPlayerEntityByName(tileEntity.player)!=null)
 			{
-				int metadata = par1World.getBlockMetadata(x, y, z);
-				float var7 = x + 0.5F;
-				float var8 = y + 0.0F + par5Random.nextFloat() * 6.0F / 16.0F;
-				float var9 = z + 0.5F;
-				float var10 = 0.52F;
-				float var11 = par5Random.nextFloat() * 0.6F - 0.3F;
+				 int l = par1World.getBlockMetadata(par2, par3, par4);
+		            float f = (float)par2 + 0.5F;
+		            float f1 = (float)par3 + 0.0F + par5Random.nextFloat() * 6.0F / 16.0F;
+		            float f2 = (float)par4 + 0.5F;
+		            float f3 = 0.52F;
+		            float f4 = par5Random.nextFloat() * 0.6F - 0.3F;
 
-				
-					par1World.spawnParticle("reddust", var7 - var10, var8, var9 + var11, 0.0D, 0.0D, 0.0D);
-				
-					par1World.spawnParticle("reddust", var7 + var10, var8, var9 + var11, 0.0D, 0.0D, 0.0D);
-				
-					par1World.spawnParticle("reddust", var7 + var11, var8, var9 - var10, 0.0D, 0.0D, 0.0D);
-				
-					par1World.spawnParticle("reddust", var7 + var11, var8, var9 + var10, 0.0D, 0.0D, 0.0D);
-				
+		            if (l == 4)
+		            {
+		                par1World.spawnParticle("smoke", (double)(f - f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
+		                par1World.spawnParticle("flame", (double)(f - f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
+		            }
+		            else if (l == 5)
+		            {
+		                par1World.spawnParticle("smoke", (double)(f + f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
+		                par1World.spawnParticle("flame", (double)(f + f3), (double)f1, (double)(f2 + f4), 0.0D, 0.0D, 0.0D);
+		            }
+		            else if (l == 2)
+		            {
+		                par1World.spawnParticle("smoke", (double)(f + f4), (double)f1, (double)(f2 - f3), 0.0D, 0.0D, 0.0D);
+		                par1World.spawnParticle("flame", (double)(f + f4), (double)f1, (double)(f2 - f3), 0.0D, 0.0D, 0.0D);
+		            }
+		            else if (l == 3)
+		            {
+		                par1World.spawnParticle("smoke", (double)(f + f4), (double)f1, (double)(f2 + f3), 0.0D, 0.0D, 0.0D);
+		                par1World.spawnParticle("flame", (double)(f + f4), (double)f1, (double)(f2 + f3), 0.0D, 0.0D, 0.0D);
+		            }
 			}
 		}
 	}
