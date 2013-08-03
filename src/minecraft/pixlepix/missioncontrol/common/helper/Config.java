@@ -16,11 +16,11 @@ public class Config {
 
 	public static int enderInventoryLink=1219;
 
-	public static int inventoryLink=1215;
+	public static int outputnventoryLink=1220;
 
-	public static int inventoryLink=1215;
+	public static int inputInventoryLink=1221;
 
-	public static int inventoryLink=1215;
+	public static int deathInventoryLink=1222;
 	
 	@ForgeSubscribe
 	public static void configure(FMLPreInitializationEvent event){
