@@ -35,10 +35,11 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 		{
 			
 			
-			EntityPlayer[] players=this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, AxisAlignedBB.getBoundingBox(xCoord-20, yCoord-20, zCoord-20, xCoord+20, yCoord+20, zCoord+20));
+			Object[] players=this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, AxisAlignedBB.getBoundingBox(xCoord-20, yCoord-20, zCoord-20, xCoord+20, yCoord+20, zCoord+20)).toArray();
 			
-			for (EntityPlayer player : using))
+			for (Object player : players)
 			{
+				
 				PacketDispatcher.sendPacketToPlayer(getDescriptionPacket(), (Player) player);
 			}
 		}
