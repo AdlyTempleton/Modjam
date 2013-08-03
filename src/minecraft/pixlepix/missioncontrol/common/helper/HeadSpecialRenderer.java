@@ -19,7 +19,8 @@ import pixlepix.missioncontrol.common.tile.OutputInventoryLinkTileEntity;
 
 public class HeadSpecialRenderer extends TileEntitySpecialRenderer {
 
-	
+	//This does nothing
+	//It's a mess
 	
 	 private final RenderBlocks renderBlocks = new RenderBlocks();
 	 	public String getPlayerName(TileEntity entity){
