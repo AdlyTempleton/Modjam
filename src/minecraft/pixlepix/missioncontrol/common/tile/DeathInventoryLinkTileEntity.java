@@ -30,9 +30,6 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 	}
 	public void updateEntity(){
 		timeToCollect--;
-		System.out.println(timeToCollect);
-		if(drops!=null)
-		System.out.println(drops.toString());
 		if(timeToCollect<0&&drops!=null){
 			Iterator<EntityItem> iter=drops.iterator();
 			while(iter.hasNext()){
