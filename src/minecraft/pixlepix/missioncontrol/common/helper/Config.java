@@ -28,7 +28,10 @@ public class Config {
 	public static void configure(FMLPreInitializationEvent event){
 
 		config = new Configuration(event.getSuggestedConfigurationFile());
-		inventoryLink=config.
+		inventoryLink=config.getBlock("Inventory Link",inventoryLink).getInt();
+
+		selectiveInventoryLink=config.getBlock("selective Inventory Link", selectiveInventoryLink).getInt();
+		
 				
 	}
 }
