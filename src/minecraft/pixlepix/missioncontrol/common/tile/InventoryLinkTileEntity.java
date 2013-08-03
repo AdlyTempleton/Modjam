@@ -34,6 +34,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	@Override
 	public void updateEntity(){
 		if(this.worldObj.getTotalWorldTime()%20==0){
+			int meta=this.worldObj.getBlockMetadata(xCoord,yCoord,zCoord);
 			if(player!=null&&worldObj.getPlayerEntityByName(player)!=null){
 				
 			}
