@@ -2,14 +2,14 @@ package pixlepix.missioncontrol.common.helper;
 
 import java.util.List;
 
-import org.lwjgl.input.Keyboard;
-
-import pixlepix.complexmachines.common.EnumColor;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+
+import org.lwjgl.input.Keyboard;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class MissionControlItemBlock extends ItemBlock {
 
@@ -26,14 +26,7 @@ public class MissionControlItemBlock extends ItemBlock {
 		}
 		else {
 			
-			list.add(EnumColor.AQUA + "This is part of an airship");
-			list.add(EnumColor.ORANGE + "Moves nearby blocks");
-
-			list.add(EnumColor.ORANGE + "Range of a 5x5x5 cube");
-			list.add(EnumColor.ORANGE + "Extend range with range upgrades");
-
-			list.add(EnumColor.ORANGE + "Click buttons to move");
-			list.add(EnumColor.DARK_GREEN + "2KW while in use");
+			
 		}
 	}
 }
