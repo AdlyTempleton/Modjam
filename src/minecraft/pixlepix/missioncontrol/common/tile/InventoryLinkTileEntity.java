@@ -114,10 +114,10 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 		return true;
 	}
 	 public void readFromNBT(NBTTagCompound nbt){
-		 
+		this.player=nbt.getString("Player");
 	 }
 	 public void writeToNBT(NBTTagCompound nbt){
-		 
+		 nbt.setString("Player", player);
 	 }
 
 }
