@@ -8,13 +8,13 @@ public class Config {
 	
 	public static int inventoryLink=1215;
 
-	public static int SelectiveInventoryLink=1216;
+	public static int selectiveInventoryLink=1216;
 
-	public static int inventoryLink=1215;
+	public static int focusedInventoryLink=1218;
 
-	public static int inventoryLink=1215;
+	public static int proximityInventoryLink=1217;
 
-	public static int inventoryLink=1215;
+	public static int enderInventoryLink=1219;
 
 	public static int inventoryLink=1215;
 
