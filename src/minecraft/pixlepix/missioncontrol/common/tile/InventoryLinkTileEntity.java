@@ -1,10 +1,13 @@
 package pixlepix.missioncontrol.common.tile;
 
+import ibxm.Player;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.AxisAlignedBB;
+import cpw.mods.fml.common.network.PacketDispatcher;
 
 public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public String player;
@@ -30,7 +33,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public void updateEntity(){
 		if (this.worldObj.getTotalWorldTime() % 3 == 0)
 		{
-			for (EntityPlayer player : this.playersUsing)
+			for (EntityPlayer player : this.worldObj.getEntitiesWithinAABB(EntityPlayer.class, AxisAlignedBB.getBoundingBox(xCoord-20, yCoord-20, zCoord-20, xCoord-20, yCoord-20, zCoord-20)))
 			{
 				PacketDispatcher.sendPacketToPlayer(getDescriptionPacket(), (Player) player);
 			}
