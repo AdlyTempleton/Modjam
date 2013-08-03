@@ -42,6 +42,8 @@ public class HeadSpecialRenderer extends TileEntitySpecialRenderer {
                 {
                     continue;
                 }
+
+                GL11.glPushMatrix();
                 switch (side)
                 {
                     case 2:
