@@ -1,9 +1,11 @@
 package pixlepix.missioncontrol.common.helper;
 
+import net.minecraft.client.entity.AbstractClientPlayer;
 import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ForgeDirection;
 
 import org.lwjgl.opengl.GL11;
@@ -39,7 +41,16 @@ public class HeadSpecialRenderer extends TileEntitySpecialRenderer {
 	    	
 	    	String username=this.getPlayerName(tileEntity);
             EntityPlayer player=tileEntity.worldObj.getPlayerEntityByName(username);
-            
+            ResourceLocation resourcelocation = AbstractClientPlayer.field_110314_b;
+
+            if (par7Str != null && par7Str.length() > 0)
+            {
+                resourcelocation = AbstractClientPlayer.func_110305_h(par7Str);
+                AbstractClientPlayer.func_110304_a(resourcelocation, par7Str);
+            }
+
+            this.func_110628_a(resourcelocation);
+            break;
 	    	for (int side = 2; side < 6; side++)
             {
 	    		ForgeDirection direction = ForgeDirection.getOrientation(side);
