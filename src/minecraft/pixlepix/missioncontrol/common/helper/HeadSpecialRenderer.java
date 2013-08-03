@@ -9,7 +9,9 @@ public class HeadSpecialRenderer extends TileEntitySpecialRenderer {
 	
 	
 	 private final RenderBlocks renderBlocks = new RenderBlocks();
-
+	 	public String getPlayerName(TileEntity entity){
+	 		return null;
+	 	}
 	    @Override
 	    public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float var8)
 	    {
