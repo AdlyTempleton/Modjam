@@ -12,7 +12,7 @@ public class PacketData {
 	double startZ;
 	double speed;
 	boolean headingDown;
-	
+	int ticks;
 	public PacketData(EntityItem entity, double endX, double endY, double endZ) {
 		this.entity=entity;
 		this.endX=endX;
@@ -23,6 +23,7 @@ public class PacketData {
 		this.startY=entity.posY;
 
 		this.startZ=entity.posZ;
+		
 		
 	}
 	
