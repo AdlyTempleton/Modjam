@@ -9,7 +9,6 @@ public class PacketRegistry implements ITickHandler {
 
 	@Override
 	public void tickStart(EnumSet<TickType> type, Object... tickData) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -21,14 +20,14 @@ public class PacketRegistry implements ITickHandler {
 
 	@Override
 	public EnumSet<TickType> ticks() {
-		// TODO Auto-generated method stub
-		return null;
+
+		return EnumSet.of(TickType.WORLD);
 	}
 
 	@Override
 	public String getLabel() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Packet Registry";
 	}
 
 }
