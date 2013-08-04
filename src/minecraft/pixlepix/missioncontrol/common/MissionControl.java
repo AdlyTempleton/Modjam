@@ -13,6 +13,7 @@ import pixlepix.missioncontrol.blocks.ProximityInventoryLink;
 import pixlepix.missioncontrol.blocks.SelectiveInventoryLink;
 import pixlepix.missioncontrol.common.helper.CommonProxy;
 import pixlepix.missioncontrol.common.helper.Config;
+import pixlepix.missioncontrol.common.helper.ItemPacket;
 import pixlepix.missioncontrol.common.helper.MissionControlTab;
 import pixlepix.missioncontrol.common.helper.PacketRegistry;
 import cpw.mods.fml.common.Mod;
@@ -43,6 +44,8 @@ public class MissionControl {
 	public static InputInventoryLink inputInventoryLink;
 
 	public static DeathInventoryLink deathInventoryLink;
+
+	public static ItemPacket packet;
 	public static MissionControlTab tab=new MissionControlTab();
 	
 
