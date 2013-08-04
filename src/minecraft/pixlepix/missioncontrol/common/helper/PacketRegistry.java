@@ -23,7 +23,9 @@ public class PacketRegistry implements ITickHandler {
 		Iterator<PacketData> iter=packets.iterator();
 		while(iter.hasNext()){
 			PacketData currentPacket=iter.next();
-			currentPacket.entity.boundingBox=null;
+			currentPacket.entity.boundingBox.setBounds(0, 0,0,0,0,0);
+			currentPacket.entity.delayBeforeCanPickup=1000;
+			currentPacket.entity.entityCollisionReduction=100;
 		}
 	}
 
