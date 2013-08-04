@@ -14,6 +14,7 @@ import pixlepix.missioncontrol.blocks.SelectiveInventoryLink;
 import pixlepix.missioncontrol.common.helper.CommonProxy;
 import pixlepix.missioncontrol.common.helper.Config;
 import pixlepix.missioncontrol.common.helper.MissionControlTab;
+import pixlepix.missioncontrol.common.helper.PacketRegistry;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -22,6 +23,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(modid = "missioncontrol", name = "Mission Control", version = "0.2.0")
 public class MissionControl {
@@ -70,6 +73,9 @@ public class MissionControl {
 
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
+
+		TickRegistry.registerTickHandler(new PacketRegistry(), Side.SERVER);
+		
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabMissionControl", "Mission Control");
 		
 		GameRegistry.addShapedRecipe(new ItemStack(inventoryLink), "xyx","yzy","xyx",'x',new ItemStack(Item.ingotIron),'y',new ItemStack(Item.redstone),'z',new ItemStack(Block.hopperBlock));
