@@ -12,7 +12,7 @@ public class PacketRegistry implements ITickHandler {
 	
 	
 	
-	public static ArrayList<PacketData> packets;
+	public static ArrayList<PacketData> packets=new ArrayList();
 	@Override
 	public void tickStart(EnumSet<TickType> type, Object... tickData) {
 		
