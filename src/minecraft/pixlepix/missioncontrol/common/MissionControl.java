@@ -1,5 +1,6 @@
 package pixlepix.missioncontrol.common;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import pixlepix.missioncontrol.blocks.DeathInventoryLink;
 import pixlepix.missioncontrol.blocks.EnderInventoryLink;
@@ -70,7 +71,7 @@ public class MissionControl {
 	public void load(FMLInitializationEvent event) {
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabMissionControl", "Mission Control");
 		
-		GameRegistry.addShapedRecipe(new ItemStack(inventoryLink), params)
+		GameRegistry.addShapedRecipe(new ItemStack(inventoryLink), "xyx","yzy","xyx",'x',new ItemStack(Item.ingotIron),'y',new ItemStack(Item.dustRedstone));
 	}
 	
 }
