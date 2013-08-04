@@ -37,7 +37,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 		
 		if(this.worldObj.getTotalWorldTime()%20==0){
 			if(worldObj.isRemote){
-				MLClientHandler.instance().getClient().effectRenderer.addEffect(new LaserFX(worldObj, xCoord,yCoord,zCoord,xCoord,yCoord+20,zCoord, Color.RED, "missioncontrol/particle.png", 40));
+				ClientHandler.instance().getClient().effectRenderer.addEffect(new LaserFX(worldObj, xCoord,yCoord,zCoord,xCoord,yCoord+20,zCoord, Color.RED, "missioncontrol/particle.png", 40));
 			}
 			int meta=this.worldObj.getBlockMetadata(xCoord,yCoord,zCoord);
 			if(player!=null&&worldObj.getPlayerEntityByName(player)!=null){
