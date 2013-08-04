@@ -11,7 +11,9 @@ public class LaserFX {
     private float rotPitch = 0.0F;
     private float prevYaw = 0.0F;
     private float prevPitch = 0.0F;
-    private Vector3 target = new Vector3();
+    private float targetX;
+    private float targetY;
+    private float targetZ;
     private float endModifier = 1.0F;
     private boolean reverse = false;
     private boolean pulse = false;
