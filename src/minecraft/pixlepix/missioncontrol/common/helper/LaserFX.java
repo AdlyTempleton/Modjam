@@ -1,5 +1,12 @@
 package pixlepix.missioncontrol.common.helper;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.World;
+
+import org.lwjgl.util.Color;
+
 public class LaserFX {
 
 	double movX = 0.0D;
@@ -21,9 +28,9 @@ public class LaserFX {
     private float prevSize = 0.0F;
     private float beamD = 0.08f;
     
-    public LaserFX(World world, Vector3 start, Vector3 end, Color color, String texture, int age)
+    public LaserFX(World world, float startX,float startY, float startZ, float endX, float endY, float endZ, Color color, String texture, int age)
     {
-        super(world, start.x, start.y, start.z, 0.0D, 0.0D, 0.0D);
+        super(world, startX, startY, startY, 0.0D, 0.0D, 0.0D);
 
         this.setRGB(color.getRed(), color.getGreen(), color.getBlue());
 
