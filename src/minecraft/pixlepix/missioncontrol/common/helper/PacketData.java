@@ -7,7 +7,7 @@ public class PacketData {
 	double endX;
 	double endY;
 	double endZ;
-	float speed;
+	double speed;
 	boolean headingDown;
 	
 	public PacketData(EntityItem entity, double endX, double endY, double endZ) {
@@ -15,12 +15,14 @@ public class PacketData {
 		this.endX=endX;
 		this.endY=endY;
 		this.endZ=endZ;
+		this.speed=calculateDistance(entity.posX,entity.posY,entity.posZ,endX,endY,endZ)/100;
+		
 	}
 	
 	
 	
-	public float calculateDistance(float x1,float y1,float z1,float x2,float y2, float z2){
-    	return (float)Math.sqrt(Math.pow(x1-x2, 2)+(Math.pow(y1-y2, 2))+(Math.pow(z1-z2, 2)));
+	public double calculateDistance(double x1,double y1,double z1,double x2,double y2, double z2){
+    	return (double)Math.sqrt(Math.pow(x1-x2, 2)+(Math.pow(y1-y2, 2))+(Math.pow(z1-z2, 2)));
     	
     }
 }
