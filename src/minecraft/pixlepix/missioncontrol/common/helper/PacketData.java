@@ -18,6 +18,11 @@ public class PacketData {
 		this.endX=endX;
 		this.endY=endY;
 		this.endZ=endZ;
+		this.startX=entity.posX;
+
+		this.startY=entity.posY;
+
+		this.startZ=entity.posZ;
 		
 	}
 	
