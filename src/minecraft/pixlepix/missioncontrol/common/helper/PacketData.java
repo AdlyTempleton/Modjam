@@ -18,6 +18,8 @@ public class PacketData {
 		this.endX=endX;
 		this.endY=endY;
 		this.endZ=endZ;
+
+		entity.boundingBox.setBounds(0, 0,0,0,0,0);
 		this.startX=entity.posX;
 
 		this.startY=entity.posY;
