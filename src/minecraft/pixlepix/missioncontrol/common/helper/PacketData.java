@@ -7,6 +7,9 @@ public class PacketData {
 	double endX;
 	double endY;
 	double endZ;
+	double startX;
+	double startY;
+	double startZ;
 	double speed;
 	boolean headingDown;
 	
@@ -15,7 +18,6 @@ public class PacketData {
 		this.endX=endX;
 		this.endY=endY;
 		this.endZ=endZ;
-		this.speed=calculateDistance(entity.posX,entity.posY,entity.posZ,endX,endY,endZ)/100;
 		
 	}
 	

@@ -26,6 +26,7 @@ public class PacketRegistry implements ITickHandler {
 			currentPacket.entity.boundingBox.setBounds(0, 0,0,0,0,0);
 			currentPacket.entity.delayBeforeCanPickup=1000;
 			currentPacket.entity.entityCollisionReduction=100;
+			currentPacket.entity.moveFlying(par1, par2, par3)
 		}
 	}
 
