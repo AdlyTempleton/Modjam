@@ -4,8 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.item.ItemExpireEvent;
 
@@ -26,7 +29,79 @@ public class PacketEntityItem extends EntityItem {
         }
     }
 
-    super.onUpdate();
+    this.worldObj.theProfiler.startSection("entityBaseTick");
+
+    if (this.ridingEntity != null && this.ridingEntity.isDead)
+    {
+        this.ridingEntity = null;
+    }
+
+    this.prevDistanceWalkedModified = this.distanceWalkedModified;
+    this.prevPosX = this.posX;
+    this.prevPosY = this.posY;
+    this.prevPosZ = this.posZ;
+    this.prevRotationPitch = this.rotationPitch;
+    this.prevRotationYaw = this.rotationYaw;
+    int i;
+
+    if (!this.worldObj.isRemote && this.worldObj instanceof WorldServer)
+    {
+        this.worldObj.theProfiler.startSection("portal");
+        MinecraftServer minecraftserver = ((WorldServer)this.worldObj).getMinecraftServer();
+        i = this.getMaxInPortalTime();
+
+        
+        else
+        {
+            if (this.timeInPortal > 0)
+            {
+                this.timeInPortal -= 4;
+            }
+
+            if (this.timeInPortal < 0)
+            {
+                this.timeInPortal = 0;
+            }
+        }
+
+        if (this.timeUntilPortal > 0)
+        {
+            --this.timeUntilPortal;
+        }
+
+        this.worldObj.theProfiler.endSection();
+    }
+
+    if (this.isSprinting() && !this.isInWater())
+    {
+        int j = MathHelper.floor_double(this.posX);
+        i = MathHelper.floor_double(this.posY - 0.20000000298023224D - (double)this.yOffset);
+        int k = MathHelper.floor_double(this.posZ);
+        int l = this.worldObj.getBlockId(j, i, k);
+
+        if (l > 0)
+        {
+            this.worldObj.spawnParticle("tilecrack_" + l + "_" + this.worldObj.getBlockMetadata(j, i, k), this.posX + ((double)this.rand.nextFloat() - 0.5D) * (double)this.width, this.boundingBox.minY + 0.1D, this.posZ + ((double)this.rand.nextFloat() - 0.5D) * (double)this.width, -this.motionX * 4.0D, 1.5D, -this.motionZ * 4.0D);
+        }
+    }
+
+    this.handleWaterMovement();
+
+   
+    if (this.handleLavaMovement())
+    {
+        this.setOnFireFromLava();
+        this.fallDistance *= 0.5F;
+    }
+
+    if (this.posY < -64.0D)
+    {
+        this.kill();
+    }
+
+   
+    this.worldObj.theProfiler.endSection();
+
 
     
 
