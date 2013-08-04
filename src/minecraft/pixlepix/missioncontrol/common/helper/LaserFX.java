@@ -44,9 +44,11 @@ public class LaserFX extends EntityFX {
         this.motionY = 0.0D;
         this.motionZ = 0.0D;
         this.targetX = endX;
-        float xd = (float) (this.posX - this.target.x);
-        float yd = (float) (this.posY - this.target.y);
-        float zd = (float) (this.posZ - this.target.z);
+        this.targetY= endY;
+        this.targetZ=endZ;
+        float xd = (float) (this.posX - this.targetX);
+        float yd = (float) (this.posY - this.targetY);
+        float zd = (float) (this.posZ - this.targetZ);
         this.length = (float) new Vector3(this).distanceTo(this.target);
         double var7 = MathHelper.sqrt_double(xd * xd + zd * zd);
         this.rotYaw = ((float) (Math.atan2(xd, zd) * 180.0D / 3.141592653589793D));
