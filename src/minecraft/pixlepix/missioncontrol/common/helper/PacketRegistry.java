@@ -24,12 +24,13 @@ public class PacketRegistry implements ITickHandler {
 		while(iter.hasNext()){
 			PacketData currentPacket=iter.next();
 
-			currentPacket.ticks++;
 			currentPacket.entity.delayBeforeCanPickup=1000;
-			currentPacket.entity.motionX=currentPacket.startX+((currentPacket.ticks/100)*(currentPacket.endX-currentPacket.startX));
-			currentPacket.entity.motionY=currentPacket.startY+((currentPacket.ticks/100)*(currentPacket.endY-currentPacket.startY));
-			currentPacket.entity.motionZ=currentPacket.startZ+((currentPacket.ticks/100)*(currentPacket.endZ-currentPacket.startZ));
-		
+			
+			currentPacket.entity.motionX= currentPacket.entity.posX>currentPacket.endX?5:-5;
+
+			currentPacket.entity.motionX= currentPacket.entity.posX>currentPacket.endX?5:-5;
+
+			currentPacket.entity.motionX= currentPacket.entity.posX>currentPacket.endX?5:-5;
 			currentPacket.entity.motionY=0;
 		}
 	}
