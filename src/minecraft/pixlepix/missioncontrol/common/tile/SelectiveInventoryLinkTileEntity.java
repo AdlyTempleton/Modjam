@@ -72,6 +72,8 @@ public class SelectiveInventoryLinkTileEntity extends InventoryLinkTileEntity im
 			case 2:
 				shiftedIndex+=36;
 		}
+
+		animatePacket();
 		shiftedIndex=Math.max(shiftedIndex, 0);
 		return entityPlayer.inventory.decrStackSize(shiftedIndex, j);
 	}
@@ -87,7 +89,8 @@ public class SelectiveInventoryLinkTileEntity extends InventoryLinkTileEntity im
 		if(player==null){
 			return;
 		}
-		
+
+		animatePacket();
 		EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
 		if(entityPlayer==null){
 			return;
