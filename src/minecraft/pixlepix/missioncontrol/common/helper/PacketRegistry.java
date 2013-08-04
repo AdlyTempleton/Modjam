@@ -26,7 +26,7 @@ public class PacketRegistry implements ITickHandler {
 
 			currentPacket.entity.delayBeforeCanPickup=1000;
 			
-			currentPacket.entity.motionX= currentPacket.entity.posX<currentPacket.endX?1:-1;
+			currentPacket.entity.motionX= (currentPacket.entity.posX-currentPacket.endX)/20;
 
 			currentPacket.entity.motionY= currentPacket.entity.posY<currentPacket.endY?1:-1;
 
@@ -45,5 +45,10 @@ public class PacketRegistry implements ITickHandler {
 		// TODO Auto-generated method stub
 		return "Packet Registry";
 	}
+	
+	public double calculateDistance(double x1,double y1,double z1,double x2,double y2, double z2){
+    	return (double)Math.sqrt(Math.pow(x1-x2, 2)+(Math.pow(y1-y2, 2))+(Math.pow(z1-z2, 2)));
+    	
+    }
 
 }
