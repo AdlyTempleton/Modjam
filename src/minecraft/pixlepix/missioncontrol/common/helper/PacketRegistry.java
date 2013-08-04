@@ -23,7 +23,7 @@ public class PacketRegistry implements ITickHandler {
 		Iterator<PacketData> iter=packets.iterator();
 		while(iter.hasNext()){
 			PacketData currentPacket=iter.next();
-			
+			currentPacket.entity.boundingBox=null;
 		}
 	}
 
