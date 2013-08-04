@@ -30,7 +30,7 @@ public class PacketRegistry implements ITickHandler {
 
 			currentPacket.entity.motionY= (currentPacket.entity.posY-currentPacket.endY)/-160;
 			currentPacket.entity.motionZ= (currentPacket.entity.posZ-currentPacket.endZ)/-160;
-			currentPacket.entity.isAirBorne=false;
+			currentPacket.entity.fallDistance=0;
 			if(calculateDistance(currentPacket.endX,currentPacket.endY,currentPacket.endZ,currentPacket.entity.posX,currentPacket.entity.posY,currentPacket.entity.posZ)<2){
 				currentPacket.entity.setDead();
 				iter.remove();
