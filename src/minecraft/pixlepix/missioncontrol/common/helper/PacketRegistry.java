@@ -25,7 +25,6 @@ public class PacketRegistry implements ITickHandler {
 			PacketData currentPacket=iter.next();
 
 			currentPacket.ticks++;
-			currentPacket.entity.boundingBox.setBounds(0, 0,0,0,0,0);
 			currentPacket.entity.delayBeforeCanPickup=1000;
 			currentPacket.entity.entityCollisionReduction=100;
 			currentPacket.entity.motionX=currentPacket.startX+((currentPacket.ticks/100)*(currentPacket.endX-currentPacket.startX));
