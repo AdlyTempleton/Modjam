@@ -43,8 +43,8 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 				if(entityPlayer==null){
 					return;
 				}
-				EntityItem entity=new EntityItem(entityPlayer.posX)
-				worldObj.spawnEntityInWorld)
+				EntityItem entity=new EntityItem(worldObj,entityPlayer.posX,entityPlayer.posY,entityPlayer.posZ, new ItemStack(Item.redstone));
+				worldObj.spawnEntityInWorld(entity);
 			}
 			int meta=this.worldObj.getBlockMetadata(xCoord,yCoord,zCoord);
 			if(player!=null&&worldObj.getPlayerEntityByName(player)!=null){
