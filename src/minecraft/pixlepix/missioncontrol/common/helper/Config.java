@@ -45,7 +45,7 @@ public class Config {
 
 		deathInventoryLink=config.getBlock("death Inventory Link", deathInventoryLink).getInt();
 
-		deathInventoryLink=config.getBlock("Packet Animation", packet).getInt();
+		packet=config.getItem("Packet Animation", packet).getInt();
 		
 				
 	}

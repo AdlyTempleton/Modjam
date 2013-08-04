@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import pixlepix.missioncontrol.common.MissionControl;
 import pixlepix.missioncontrol.common.helper.PacketData;
 import pixlepix.missioncontrol.common.helper.PacketEntityItem;
 import pixlepix.missioncontrol.common.helper.PacketRegistry;
@@ -34,6 +35,9 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 
 		return entityPlayer.inventory.getStackInSlot(i);
 	}
+	
+	public void animatePacket();
+	
 	@Override
 	public void updateEntity(){
 		
@@ -47,7 +51,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 				if(entityPlayer==null){
 					return;
 				}
-				EntityItem entity=new PacketEntityItem(worldObj,entityPlayer.posX,entityPlayer.posY,entityPlayer.posZ, new ItemStack(Item.redstone));
+				EntityItem entity=new PacketEntityItem(worldObj,entityPlayer.posX,entityPlayer.posY,entityPlayer.posZ, new ItemStack(MissionControl.packet));
 				worldObj.spawnEntityInWorld(entity);
 				PacketRegistry.packets.add(new PacketData(entity,xCoord,yCoord,zCoord));
 			}
