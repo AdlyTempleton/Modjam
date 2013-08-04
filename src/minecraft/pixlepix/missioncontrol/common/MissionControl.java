@@ -77,7 +77,7 @@ public class MissionControl {
 		GameRegistry.addShapelessRecipe(new ItemStack(focusedInventoryLink), new ItemStack(inventoryLink),new ItemStack(Item.flint));
 		GameRegistry.addShapelessRecipe(new ItemStack(proximityInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.pressurePlateStone));
 		GameRegistry.addShapelessRecipe(new ItemStack(enderInventoryLink), new ItemStack(inventoryLink),new ItemStack(Item.enderPearl));
-		GameRegistry.addShapelessRecipe(new ItemStack(deathInventoryLink), new ItemStack(inventoryLink),new ItemStack(Item.bones));
+		GameRegistry.addShapelessRecipe(new ItemStack(deathInventoryLink), new ItemStack(inventoryLink),new ItemStack(Item.bone));
 		GameRegistry.addShapelessRecipe(new ItemStack(selectiveInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.glass));
 		GameRegistry.addShapelessRecipe(new ItemStack(selectiveInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.glass));
 		
