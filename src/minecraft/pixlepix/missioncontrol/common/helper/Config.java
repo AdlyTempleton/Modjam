@@ -23,6 +23,8 @@ public class Config {
 
 	public static int deathInventoryLink=1222;
 
+	public static int packet=21222;
+
 	public static Configuration config;
 	public static void configure(FMLPreInitializationEvent event){
 
@@ -42,6 +44,8 @@ public class Config {
 		inputInventoryLink=config.getBlock("input Inventory Link", inputInventoryLink).getInt();
 
 		deathInventoryLink=config.getBlock("death Inventory Link", deathInventoryLink).getInt();
+
+		deathInventoryLink=config.getBlock("Packet Animation", packet).getInt();
 		
 				
 	}

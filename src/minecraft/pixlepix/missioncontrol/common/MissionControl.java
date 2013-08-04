@@ -72,6 +72,7 @@ public class MissionControl {
 		this.inputInventoryLink=new InputInventoryLink(Config.inputInventoryLink);
 
 		this.deathInventoryLink=new DeathInventoryLink(Config.deathInventoryLink);
+		this.packet=new ItemPacket(Config.packet);
 	}
 
 	@EventHandler
