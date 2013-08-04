@@ -33,6 +33,7 @@ public class PacketRegistry implements ITickHandler {
 					currentPacket.startY+((currentPacket.ticks/100)*(currentPacket.endY-currentPacket.startY)),
 					currentPacket.startZ+((currentPacket.ticks/100)*(currentPacket.endZ-currentPacket.startZ))
 					);
+			currentPacket.entity.motionY=0;
 		}
 	}
 
