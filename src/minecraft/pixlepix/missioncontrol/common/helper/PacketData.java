@@ -10,7 +10,12 @@ public class PacketData {
 	float speed;
 	boolean headingDown;
 	
-	public PacketData(EntityItem entity, double endX, double endY, double endZ);
+	public PacketData(EntityItem entity, double endX, double endY, double endZ) {
+		this.entity=entity;
+		this.endX=endX;
+		this.endY=endY;
+		this.endZ=endZ;
+	}
 	
 	
 	
