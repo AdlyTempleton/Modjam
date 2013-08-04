@@ -2,6 +2,8 @@ package pixlepix.missioncontrol.common.tile;
 
 import java.awt.Color;
 
+import cpw.mods.fml.client.FMLClientHandler;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -37,7 +39,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 		
 		if(this.worldObj.getTotalWorldTime()%20==0){
 			if(worldObj.isRemote){
-				ClientHandler.instance().getClient().effectRenderer.addEffect(new LaserFX(worldObj, xCoord,yCoord,zCoord,xCoord,yCoord+20,zCoord, Color.RED, "missioncontrol/particle.png", 40));
+				FMLClientHandler.instance().getClient().effectRenderer.addEffect(new LaserFX(worldObj, xCoord,yCoord,zCoord,xCoord,yCoord+20,zCoord, Color.RED, "missioncontrol/particle.png", 40));
 			}
 			int meta=this.worldObj.getBlockMetadata(xCoord,yCoord,zCoord);
 			if(player!=null&&worldObj.getPlayerEntityByName(player)!=null){
