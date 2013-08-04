@@ -28,10 +28,9 @@ public class PacketRegistry implements ITickHandler {
 			
 			currentPacket.entity.motionX= currentPacket.entity.posX>currentPacket.endX?5:-5;
 
-			currentPacket.entity.motionX= currentPacket.entity.posX>currentPacket.endX?5:-5;
+			currentPacket.entity.motionY= currentPacket.entity.posY>currentPacket.endY?5:-5;
 
-			currentPacket.entity.motionX= currentPacket.entity.posX>currentPacket.endX?5:-5;
-			currentPacket.entity.motionY=0;
+			currentPacket.entity.motionZ= currentPacket.entity.posZ>currentPacket.endZ?5:-5;
 		}
 	}
 
