@@ -30,6 +30,11 @@ public class LaserFX extends EntityFX {
     private float beamD = 0.08f;
     private String texture;
     
+    
+    public float calculateDistance(){
+    	
+    }
+    
     public LaserFX(World world, float startX,float startY, float startZ, float endX, float endY, float endZ, Color color, String texture, int age)
     {
         super(world, startX, startY, startY, 0.0D, 0.0D, 0.0D);
