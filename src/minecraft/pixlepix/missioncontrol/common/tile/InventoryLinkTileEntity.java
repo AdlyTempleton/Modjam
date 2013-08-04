@@ -36,25 +36,25 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 		return entityPlayer.inventory.getStackInSlot(i);
 	}
 	
-	public void animatePacket();
+	public void animatePacket(){
+		if(player==null){
+			return;
+		}
+		
+		EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
+		if(entityPlayer==null){
+			return;
+		}
+		EntityItem entity=new PacketEntityItem(worldObj,entityPlayer.posX,entityPlayer.posY,entityPlayer.posZ, new ItemStack(MissionControl.packet));
+		worldObj.spawnEntityInWorld(entity);
+		PacketRegistry.packets.add(new PacketData(entity,xCoord,yCoord,zCoord));
+	}
 	
 	@Override
 	public void updateEntity(){
 		
 		if(this.worldObj.getTotalWorldTime()%20==0){
-			if(!worldObj.isRemote){
-				if(player==null){
-					return;
-				}
-				
-				EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
-				if(entityPlayer==null){
-					return;
-				}
-				EntityItem entity=new PacketEntityItem(worldObj,entityPlayer.posX,entityPlayer.posY,entityPlayer.posZ, new ItemStack(MissionControl.packet));
-				worldObj.spawnEntityInWorld(entity);
-				PacketRegistry.packets.add(new PacketData(entity,xCoord,yCoord,zCoord));
-			}
+			
 			int meta=this.worldObj.getBlockMetadata(xCoord,yCoord,zCoord);
 			if(player!=null&&worldObj.getPlayerEntityByName(player)!=null){
 				
