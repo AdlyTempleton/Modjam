@@ -1,13 +1,14 @@
 package pixlepix.missioncontrol.common.helper;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 import org.lwjgl.util.Color;
 
-public class LaserFX {
+public class LaserFX extends EntityFX {
 
 	double movX = 0.0D;
     double movY = 0.0D;
@@ -27,6 +28,7 @@ public class LaserFX {
     private int rotationSpeed = 20;
     private float prevSize = 0.0F;
     private float beamD = 0.08f;
+    private String texture;
     
     public LaserFX(World world, float startX,float startY, float startZ, float endX, float endY, float endZ, Color color, String texture, int age)
     {
