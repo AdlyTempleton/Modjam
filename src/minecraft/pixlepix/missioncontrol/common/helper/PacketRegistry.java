@@ -7,6 +7,10 @@ import cpw.mods.fml.common.TickType;
 
 public class PacketRegistry implements ITickHandler {
 
+	
+	
+	
+	ArrayList<PacketData packets>;
 	@Override
 	public void tickStart(EnumSet<TickType> type, Object... tickData) {
 		
@@ -14,7 +18,6 @@ public class PacketRegistry implements ITickHandler {
 
 	@Override
 	public void tickEnd(EnumSet<TickType> type, Object... tickData) {
-		// TODO Auto-generated method stub
 		
 	}
 
