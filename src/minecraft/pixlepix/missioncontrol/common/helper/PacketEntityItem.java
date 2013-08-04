@@ -48,26 +48,7 @@ public class PacketEntityItem extends EntityItem {
     {
         this.worldObj.theProfiler.startSection("portal");
         MinecraftServer minecraftserver = ((WorldServer)this.worldObj).getMinecraftServer();
-        i = this.getMaxInPortalTime();
-
         
-        else
-        {
-            if (this.timeInPortal > 0)
-            {
-                this.timeInPortal -= 4;
-            }
-
-            if (this.timeInPortal < 0)
-            {
-                this.timeInPortal = 0;
-            }
-        }
-
-        if (this.timeUntilPortal > 0)
-        {
-            --this.timeUntilPortal;
-        }
 
         this.worldObj.theProfiler.endSection();
     }
