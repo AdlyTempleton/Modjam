@@ -74,6 +74,13 @@ public class MissionControl {
 		
 		GameRegistry.addShapedRecipe(new ItemStack(inventoryLink), "xyx","yzy","xyx",'x',new ItemStack(Item.ingotIron),'y',new ItemStack(Item.redstone),'z',new ItemStack(Block.hopperBlock));
 		GameRegistry.addShapelessRecipe(new ItemStack(selectiveInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.glass));
+		GameRegistry.addShapelessRecipe(new ItemStack(focusedInventoryLink), new ItemStack(inventoryLink),new ItemStack(Item.flint));
+		GameRegistry.addShapelessRecipe(new ItemStack(proximityInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.pressurePlateStone));
+		GameRegistry.addShapelessRecipe(new ItemStack(selectiveInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.glass));
+		GameRegistry.addShapelessRecipe(new ItemStack(selectiveInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.glass));
+		GameRegistry.addShapelessRecipe(new ItemStack(selectiveInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.glass));
+		GameRegistry.addShapelessRecipe(new ItemStack(selectiveInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.glass));
+		
 	}
 	
 }
