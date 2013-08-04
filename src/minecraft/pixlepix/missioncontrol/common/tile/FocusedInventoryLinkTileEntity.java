@@ -75,6 +75,8 @@ public class FocusedInventoryLinkTileEntity extends InventoryLinkTileEntity impl
 
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
+
+		animatePacket();
 		if(player==null){
 			return null;
 		}
@@ -94,6 +96,8 @@ public class FocusedInventoryLinkTileEntity extends InventoryLinkTileEntity impl
 
 	@Override
 	public void setInventorySlotContents(int i, ItemStack itemStack) {
+
+		animatePacket();
 		
 		if(player==null){
 			return;

@@ -30,6 +30,8 @@ public class EnderInventoryLinkTileEntity extends InventoryLinkTileEntity implem
 
 	@Override
 	public ItemStack decrStackSize(int i, int j) {
+
+		animatePacket();
 		if(player==null){
 			return null;
 		}
@@ -49,7 +51,8 @@ public class EnderInventoryLinkTileEntity extends InventoryLinkTileEntity implem
 
 	@Override
 	public void setInventorySlotContents(int i, ItemStack itemstack) {
-		
+
+		animatePacket();
 		if(player==null){
 			return;
 		}

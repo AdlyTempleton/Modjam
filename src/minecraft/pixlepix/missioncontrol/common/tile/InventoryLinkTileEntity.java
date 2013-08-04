@@ -77,6 +77,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 			return null;
 		}
 
+		animatePacket();
 		return entityPlayer.inventory.decrStackSize(i, j);
 	}
 
@@ -96,6 +97,8 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 		if(entityPlayer==null){
 			return;
 		}
+
+		animatePacket();
 		entityPlayer.inventory.setInventorySlotContents(i, itemstack);
 	}
 
