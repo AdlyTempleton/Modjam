@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import pixlepix.missioncontrol.common.helper.PacketData;
+import pixlepix.missioncontrol.common.helper.PacketEntityItem;
 import pixlepix.missioncontrol.common.helper.PacketRegistry;
 
 public class InventoryLinkTileEntity extends TileEntity implements IInventory {
@@ -46,7 +47,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 				if(entityPlayer==null){
 					return;
 				}
-				EntityItem entity=new EntityItem(worldObj,entityPlayer.posX,entityPlayer.posY,entityPlayer.posZ, new ItemStack(Item.redstone));
+				EntityItem entity=new PacketEntityItem(worldObj,entityPlayer.posX,entityPlayer.posY,entityPlayer.posZ, new ItemStack(Item.redstone));
 				worldObj.spawnEntityInWorld(entity);
 				PacketRegistry.packets.add(new PacketData(entity,xCoord,yCoord,zCoord));
 			}
