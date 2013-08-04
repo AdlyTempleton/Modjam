@@ -1,13 +1,14 @@
 package pixlepix.missioncontrol.common.tile;
 
-import pixlepix.missioncontrol.common.helper.PacketData;
-import pixlepix.missioncontrol.common.helper.PacketRegistry;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
+import pixlepix.missioncontrol.common.helper.PacketData;
+import pixlepix.missioncontrol.common.helper.PacketRegistry;
 
 public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public String player;
