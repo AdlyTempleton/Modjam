@@ -9,8 +9,10 @@ import net.minecraft.world.World;
 
 import org.lwjgl.input.Keyboard;
 
+import pixlepix.missioncontrol.common.tile.DeathInventoryLinkTileEntity;
 import pixlepix.missioncontrol.common.tile.InputInventoryLinkTileEntity;
 import pixlepix.missioncontrol.common.tile.InventoryLinkTileEntity;
+import pixlepix.missioncontrol.common.tile.OutputInventoryLinkTileEntity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -38,12 +40,12 @@ public class MissionControlItemBlock extends ItemBlock {
 	    		InputInventoryLinkTileEntity tileEntity = (InputInventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
 	    		tileEntity.player=player.username;
     		}
-    		if(world.getBlockTileEntity(x, y, z) instanceof InventoryLinkTileEntity){
-	    		InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
+    		if(world.getBlockTileEntity(x, y, z) instanceof OutputInventoryLinkTileEntity){
+	    		OutputInventoryLinkTileEntity tileEntity = (OutputInventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
 	    		tileEntity.player=player.username;
     		}
-    		if(world.getBlockTileEntity(x, y, z) instanceof InventoryLinkTileEntity){
-	    		InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
+    		if(world.getBlockTileEntity(x, y, z) instanceof DeathInventoryLinkTileEntity){
+	    		DeathInventoryLinkTileEntity tileEntity = (DeathInventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
 	    		tileEntity.player=player.username;
     		}
     	}
