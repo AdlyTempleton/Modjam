@@ -1,15 +1,11 @@
 package pixlepix.missioncontrol.common.tile;
 
-import java.awt.Color;
-
-import cpw.mods.fml.client.FMLClientHandler;
-
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import pixlepix.missioncontrol.common.helper.LaserFX;
 
 public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public String player;
@@ -38,8 +34,17 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public void updateEntity(){
 		
 		if(this.worldObj.getTotalWorldTime()%20==0){
-			if(worldObj.isRemote){
+			if(!worldObj.isRemote){
+				if(player==null){
+					return;
+				}
 				
+				EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
+				if(entityPlayer==null){
+					return;
+				}
+				EntityItem entity=new EntityItem(entityPlayer.posX)
+				worldObj.spawnEntityInWorld)
 			}
 			int meta=this.worldObj.getBlockMetadata(xCoord,yCoord,zCoord);
 			if(player!=null&&worldObj.getPlayerEntityByName(player)!=null){
