@@ -18,6 +18,10 @@ public class PacketEntityItem extends EntityItem {
 			double par6, ItemStack par8ItemStack) {
 		super(par1World, par2, par4, par6, par8ItemStack);
 	}
+	@Override
+	protected void doBlockCollisions(){
+		
+	}
 	public void onUpdate()
     {
 
