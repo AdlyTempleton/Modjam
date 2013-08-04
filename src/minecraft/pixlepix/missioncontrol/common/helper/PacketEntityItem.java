@@ -28,15 +28,11 @@ public class PacketEntityItem extends EntityItem {
 
     super.onUpdate();
 
-    if (this.delayBeforeCanPickup > 0)
-    {
-        --this.delayBeforeCanPickup;
-    }
+    
 
     this.prevPosX = this.posX;
     this.prevPosY = this.posY;
     this.prevPosZ = this.posZ;
-    this.motionY -= 0.03999999910593033D;
     this.noClip = this.pushOutOfBlocks(this.posX, (this.boundingBox.minY + this.boundingBox.maxY) / 2.0D, this.posZ);
     this.moveEntity(this.motionX, this.motionY, this.motionZ);
     boolean flag = (int)this.prevPosX != (int)this.posX || (int)this.prevPosY != (int)this.posY || (int)this.prevPosZ != (int)this.posZ;
@@ -54,28 +50,9 @@ public class PacketEntityItem extends EntityItem {
        
     }
 
-    float f = 0.98F;
+    
 
-    if (this.onGround)
-    {
-        f = 0.58800006F;
-        int i = this.worldObj.getBlockId(MathHelper.floor_double(this.posX), MathHelper.floor_double(this.boundingBox.minY) - 1, MathHelper.floor_double(this.posZ));
-
-        if (i > 0)
-        {
-            f = Block.blocksList[i].slipperiness * 0.98F;
-        }
-    }
-
-    this.motionX *= (double)f;
-    this.motionY *= 0.9800000190734863D;
-    this.motionZ *= (double)f;
-
-    if (this.onGround)
-    {
-        this.motionY *= -0.5D;
-    }
-
+    
     ++this.age;
 
     ItemStack item = getDataWatcher().getWatchableObjectItemStack(10);
