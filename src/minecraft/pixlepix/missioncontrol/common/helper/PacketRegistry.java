@@ -26,10 +26,10 @@ public class PacketRegistry implements ITickHandler {
 
 			currentPacket.entity.delayBeforeCanPickup=1000;
 			
-			currentPacket.entity.motionX= (currentPacket.entity.posX-currentPacket.endX)/-40;
+			currentPacket.entity.motionX= (currentPacket.entity.posX-currentPacket.endX)/-10;
 
-			currentPacket.entity.motionY= (currentPacket.entity.posY-currentPacket.endY)/-40;
-			currentPacket.entity.motionZ= (currentPacket.entity.posZ-currentPacket.endZ)/-40;
+			currentPacket.entity.motionY= (currentPacket.entity.posY-currentPacket.endY)/-10;
+			currentPacket.entity.motionZ= (currentPacket.entity.posZ-currentPacket.endZ)/-10;
 			if(calculateDistance(currentPacket.endX,currentPacket.endY,currentPacket.endZ,currentPacket.entity.posX,currentPacket.entity.posY,currentPacket.entity.posZ)<2){
 				currentPacket.entity.setDead();
 				iter.remove();
