@@ -1,15 +1,13 @@
 package pixlepix.missioncontrol.common.tile;
 
+import java.awt.Color;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.packet.Packet;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
-import pixlepix.missioncontrol.common.MissionControl;
-import cpw.mods.fml.common.network.PacketDispatcher;
-import cpw.mods.fml.common.network.Player;
+import pixlepix.missioncontrol.common.helper.LaserFX;
 
 public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	public String player;
@@ -39,7 +37,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 		
 		if(this.worldObj.getTotalWorldTime()%20==0){
 			if(worldObj.isRemote){
-				MLClientHandler.instance().getClient().effectRenderer.addEffect(new LaserFX(worldObj, position, target, color, "missioncontrol/particle.png", age));
+				MLClientHandler.instance().getClient().effectRenderer.addEffect(new LaserFX(worldObj, xCoord,yCoord,zCoord,xCoord,yCoord+20,zCoord, Color.RED, "missioncontrol/particle.png", 40));
 			}
 			int meta=this.worldObj.getBlockMetadata(xCoord,yCoord,zCoord);
 			if(player!=null&&worldObj.getPlayerEntityByName(player)!=null){

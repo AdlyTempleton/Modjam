@@ -41,11 +41,11 @@ public class LaserFX extends EntityFX {
     	
     }
     
-    public LaserFX(World world, float startX,float startY, float startZ, float endX, float endY, float endZ, Color color, String texture, int age)
+    public LaserFX(World world, float startX,float startY, float startZ, float endX, float endY, float endZ, java.awt.Color red, String texture, int age)
     {
         super(world, startX, startY, startY, 0.0D, 0.0D, 0.0D);
 
-        this.setRGB(color.getRed(), color.getGreen(), color.getBlue());
+        this.setRGB(red.getRed(), red.getGreen(), red.getBlue());
 
         this.texture = texture;
 
