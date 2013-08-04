@@ -1,6 +1,5 @@
 package pixlepix.missioncontrol.common.helper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,6 +9,7 @@ import net.minecraft.world.World;
 
 import org.lwjgl.input.Keyboard;
 
+import pixlepix.missioncontrol.common.tile.InputInventoryLinkTileEntity;
 import pixlepix.missioncontrol.common.tile.InventoryLinkTileEntity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -30,9 +30,21 @@ public class MissionControlItemBlock extends ItemBlock {
     	if(place)
     	{
     		
-    		if(tileEntity instanceof InventoryLinkTileEntity){
-    		InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
-    		tileEntity.player=player.username;
+    		if(world.getBlockTileEntity(x, y, z) instanceof InventoryLinkTileEntity){
+	    		InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
+	    		tileEntity.player=player.username;
+    		}
+    		if(world.getBlockTileEntity(x, y, z) instanceof InputInventoryLinkTileEntity){
+	    		InputInventoryLinkTileEntity tileEntity = (InputInventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
+	    		tileEntity.player=player.username;
+    		}
+    		if(world.getBlockTileEntity(x, y, z) instanceof InventoryLinkTileEntity){
+	    		InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
+	    		tileEntity.player=player.username;
+    		}
+    		if(world.getBlockTileEntity(x, y, z) instanceof InventoryLinkTileEntity){
+	    		InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
+	    		tileEntity.player=player.username;
     		}
     	}
     	
