@@ -73,6 +73,7 @@ public class MissionControl {
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabMissionControl", "Mission Control");
 		
 		GameRegistry.addShapedRecipe(new ItemStack(inventoryLink), "xyx","yzy","xyx",'x',new ItemStack(Item.ingotIron),'y',new ItemStack(Item.redstone),'z',new ItemStack(Block.hopperBlock));
+		GameRegistry.addShapelessRecipe(new ItemStack(selectiveInventoryLink), new ItemStack(inventoryLink),new ItemStack(Block.glass));
 	}
 	
 }
