@@ -43,7 +43,7 @@ public class LaserFX extends EntityFX {
         this.motionX = 0.0D;
         this.motionY = 0.0D;
         this.motionZ = 0.0D;
-        this.target = end;
+        this.targetX = endX;
         float xd = (float) (this.posX - this.target.x);
         float yd = (float) (this.posY - this.target.y);
         float zd = (float) (this.posZ - this.target.z);
@@ -68,6 +68,40 @@ public class LaserFX extends EntityFX {
         {
             this.particleMaxAge = 0;
         }
+    }
+    
+    @Override
+    public void onUpdate()
+    {
+        this.prevPosX = this.posX;
+        this.prevPosY = this.posY;
+        this.prevPosZ = this.posZ;
+
+        this.prevYaw = this.rotYaw;
+        this.prevPitch = this.rotPitch;
+
+        float xd = (float) (this.posX - this.targetX);
+        float yd = (float) (this.posY - this.targetY);
+        float zd = (float) (this.posZ - this.targetZ);
+
+        this.length = MathHelper.sqrt_float(xd * xd + yd * yd + zd * zd);
+
+        double var7 = MathHelper.sqrt_double(xd * xd + zd * zd);
+
+        this.rotYaw = ((float) (Math.atan2(xd, zd) * 180.0D / 3.141592653589793D));
+        this.rotPitch = ((float) (Math.atan2(yd, var7) * 180.0D / 3.141592653589793D));
+
+        if (this.particleAge++ >= this.particleMaxAge)
+        {
+            setDead();
+        }
+    }
+
+    public void setRGB(float r, float g, float b)
+    {
+        this.particleRed = r;
+        this.particleGreen = g;
+        this.particleBlue = b;
     }
 	
 	
