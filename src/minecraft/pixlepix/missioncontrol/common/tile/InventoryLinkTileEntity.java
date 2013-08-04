@@ -1,5 +1,7 @@
 package pixlepix.missioncontrol.common.tile;
 
+import pixlepix.missioncontrol.common.helper.PacketData;
+import pixlepix.missioncontrol.common.helper.PacketRegistry;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -45,6 +47,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 				}
 				EntityItem entity=new EntityItem(worldObj,entityPlayer.posX,entityPlayer.posY,entityPlayer.posZ, new ItemStack(Item.redstone));
 				worldObj.spawnEntityInWorld(entity);
+				PacketRegistry.packets.add(new PacketData(entity,xCoord,yCoord,zCoord));
 			}
 			int meta=this.worldObj.getBlockMetadata(xCoord,yCoord,zCoord);
 			if(player!=null&&worldObj.getPlayerEntityByName(player)!=null){
