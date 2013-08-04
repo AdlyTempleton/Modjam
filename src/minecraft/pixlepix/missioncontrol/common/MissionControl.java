@@ -1,5 +1,6 @@
 package pixlepix.missioncontrol.common;
 
+import net.minecraft.item.ItemStack;
 import pixlepix.missioncontrol.blocks.DeathInventoryLink;
 import pixlepix.missioncontrol.blocks.EnderInventoryLink;
 import pixlepix.missioncontrol.blocks.FocusedInventoryLink;
@@ -17,7 +18,7 @@ import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = "missioncontrol", name = "Mission Control", version = "0.2.0")
@@ -68,6 +69,8 @@ public class MissionControl {
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabMissionControl", "Mission Control");
+		
+		GameRegistry.addShapedRecipe(new ItemStack(inventoryLink), params)
 	}
 	
 }
