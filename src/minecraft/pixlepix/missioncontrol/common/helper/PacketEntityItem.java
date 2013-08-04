@@ -22,7 +22,6 @@ public class PacketEntityItem extends EntityItem {
     {
 
 	ItemStack stack = this.getDataWatcher().getWatchableObjectItemStack(10);
-	this.boundingBox=null;
     if (stack != null && stack.getItem() != null)
     {
         if (stack.getItem().onEntityItemUpdate(this))
