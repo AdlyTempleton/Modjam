@@ -28,7 +28,7 @@ public class MissionControlItemBlock extends ItemBlock {
     	
     	if(place)
     	{
-    		TileEntityInventoryLink tileEntity = (TileEntityEnergyCube)world.getBlockTileEntity(x, y, z);
+    		TileEntityInventoryLink tileEntity = (TileEntityInventoryLink)world.getBlockTileEntity(x, y, z);
     		tileEntity.tier = ((IEnergyCube)stack.getItem()).getEnergyCubeTier(stack);
     		tileEntity.electricityStored = getEnergy(stack);
     		
