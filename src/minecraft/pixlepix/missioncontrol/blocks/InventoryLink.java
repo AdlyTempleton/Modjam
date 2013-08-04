@@ -18,7 +18,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class InventoryLink extends Block {
-
 	public InventoryLink(int par1) {
 		super(par1, Material.anvil);
 
