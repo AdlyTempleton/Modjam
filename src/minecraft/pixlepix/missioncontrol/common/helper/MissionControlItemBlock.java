@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 
 import org.lwjgl.input.Keyboard;
 
+import pixlepix.missioncontrol.common.tile.InventoryLinkTileEntity;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -28,17 +29,10 @@ public class MissionControlItemBlock extends ItemBlock {
     	
     	if(place)
     	{
-    		TileEntityInventoryLink tileEntity = (TileEntityInventoryLink)world.getBlockTileEntity(x, y, z);
-    		tileEntity.tier = ((IEnergyCube)stack.getItem()).getEnergyCubeTier(stack);
-    		tileEntity.electricityStored = getEnergy(stack);
     		
-    		((ISustainedInventory)tileEntity).setInventory(getInventory(stack));
-    		
-			tileEntity.powerHandler.configure(0, 100, 0, (int)(tileEntity.tier.MAX_ELECTRICITY*Mekanism.TO_BC));
-    		
-    		if(!world.isRemote)
-    		{
-    			PacketHandler.sendPacket(Transmission.ALL_CLIENTS, new PacketTileEntity().setParams(Object3D.get(tileEntity), tileEntity.getNetworkedData(new ArrayList())));
+    		if(tileEntity instanceof InventoryLinkTileEntity){
+    		InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
+    		tileEntity.player=player.username;
     		}
     	}
     	
