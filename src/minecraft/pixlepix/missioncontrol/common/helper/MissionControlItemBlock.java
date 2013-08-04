@@ -1,10 +1,12 @@
 package pixlepix.missioncontrol.common.helper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 import org.lwjgl.input.Keyboard;
 
@@ -17,6 +19,34 @@ public class MissionControlItemBlock extends ItemBlock {
 	public MissionControlItemBlock(int par1) {
 		super(par1);
 	}
+	
+	
+	@Override
+	public boolean placeBlockAt(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ, int metadata)
+    {
+    	boolean place = super.placeBlockAt(stack, player, world, x, y, z, side, hitX, hitY, hitZ, metadata);
+    	
+    	if(place)
+    	{
+    		TileEntityInventoryLink tileEntity = (TileEntityEnergyCube)world.getBlockTileEntity(x, y, z);
+    		tileEntity.tier = ((IEnergyCube)stack.getItem()).getEnergyCubeTier(stack);
+    		tileEntity.electricityStored = getEnergy(stack);
+    		
+    		((ISustainedInventory)tileEntity).setInventory(getInventory(stack));
+    		
+			tileEntity.powerHandler.configure(0, 100, 0, (int)(tileEntity.tier.MAX_ELECTRICITY*Mekanism.TO_BC));
+    		
+    		if(!world.isRemote)
+    		{
+    			PacketHandler.sendPacket(Transmission.ALL_CLIENTS, new PacketTileEntity().setParams(Object3D.get(tileEntity), tileEntity.getNetworkedData(new ArrayList())));
+    		}
+    	}
+    	
+    	return place;
+    }
+	
+	
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List list, boolean par4){
