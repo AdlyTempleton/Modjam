@@ -46,7 +46,7 @@
 	</target>
 
 	<target name="sign_jar">
-		<signjar jar="${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}\ee3-universal-${build.release.mod.version}-${build_number.build_number}.jar" keystore="${build.keystore.location}" alias="${build.keystore.alias}" storepass="${build.keystore.password}" />
+		<signjar jar="${build.dir.release}\${build.release.minecraft.version}\${build.release.mod.version}\MissionControl-${build.release.mod.version}-${build_number.build_number}.jar" keystore="${build.keystore.location}" alias="${build.keystore.alias}" storepass="${build.keystore.password}" />
 	</target>
 
 	<target name="build">
