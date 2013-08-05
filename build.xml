@@ -1,4 +1,4 @@
-me="Equivalent Exchange 3" default="build">
+me="Mission Control" default="build">
 
 	<property file="build.properties" prefix="build"/>
 	<property file="build_number.properties" prefix="build_number"/>
