@@ -17,6 +17,7 @@ public class OutputInventoryLinkTileEntity extends TileEntity {
 	
 	@Override
 	public void invalidate(){
+		MinecraftForge.EVENT_BUS.unregister(this);
 	}
 	public void dropItem(ItemStack item){
 		worldObj.spawnEntityInWorld(new EntityItem(worldObj,xCoord+0.5,yCoord+2.5,zCoord+0.5,item));

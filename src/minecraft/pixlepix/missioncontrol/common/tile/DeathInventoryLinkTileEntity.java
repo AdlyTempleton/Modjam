@@ -22,6 +22,10 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 	public void dropItem(ItemStack item){
 		worldObj.spawnEntityInWorld(new EntityItem(worldObj,xCoord+0.5,yCoord+2.5,zCoord+0.5,item));
 	}
+	@Override
+	public void invalidate(){
+		MinecraftForge.EVENT_BUS.unregister(this);
+	}
 	@ForgeSubscribe
 	public void onPickup(PlayerDropsEvent e){
 		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
