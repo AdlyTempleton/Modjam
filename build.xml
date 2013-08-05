@@ -1,4 +1,4 @@
-me="Mission Control" default="build">
+<project name="Mission Control" default="build">
 
 	<property file="build.properties" prefix="build"/>
 	<property file="build_number.properties" prefix="build_number"/>
