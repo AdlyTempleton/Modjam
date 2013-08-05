@@ -34,6 +34,7 @@ public class MissionControlItemBlock extends ItemBlock {
     		
     		if(world.getBlockTileEntity(x, y, z) instanceof InventoryLinkTileEntity){
 	    		InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity)world.getBlockTileEntity(x, y, z);
+	    		System.out.println("Having fun!");
 	    		tileEntity.player=player.username;
     		}
     		if(world.getBlockTileEntity(x, y, z) instanceof InputInventoryLinkTileEntity){
