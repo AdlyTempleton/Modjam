@@ -28,7 +28,7 @@ public class OutputInventoryLinkTileEntity extends TileEntity {
 
 			return;
 		}
-		if(worldObj.isRemote&&e.entityPlayer.username.equals(player)){
+		if(!worldObj.isRemote&&e.entityPlayer.username.equals(player)){
 	
 
 			ItemStack stack=e.item.getEntityItem();
