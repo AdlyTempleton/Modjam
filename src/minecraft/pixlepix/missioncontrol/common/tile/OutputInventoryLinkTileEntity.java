@@ -30,6 +30,9 @@ public class OutputInventoryLinkTileEntity extends TileEntity {
 			System.out.println("2+"+worldObj.isRemote);
 			return;
 		}
+		System.out.println(e.entityPlayer.username+worldObj.isRemote);
+
+		System.out.println(player+worldObj.isRemote);
 		if(e.entityPlayer.username.equals(player)){
 
 			System.out.println("3+"+worldObj.isRemote);
