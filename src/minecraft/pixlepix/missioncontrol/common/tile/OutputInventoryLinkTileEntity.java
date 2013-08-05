@@ -26,13 +26,25 @@ public class OutputInventoryLinkTileEntity extends TileEntity {
 	public void onPickup(EntityItemPickupEvent e){
 		System.out.println("1+"+worldObj.isRemote);
 		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
+
+			System.out.println("2+"+worldObj.isRemote);
 			return;
 		}
 		if(e.entityPlayer.username.equals(player)){
+
+			System.out.println("3+"+worldObj.isRemote);
 			ItemStack stack=e.item.getEntityItem();
+
+			System.out.println("4+"+worldObj.isRemote);
 			e.item.setDead();
+
+			System.out.println("5+"+worldObj.isRemote);
 			e.setCanceled(true);
+
+			System.out.println("6+"+worldObj.isRemote);
 			dropItem(stack);
+
+			System.out.println("7+"+worldObj.isRemote);
 		}
 	}
 	@Override
