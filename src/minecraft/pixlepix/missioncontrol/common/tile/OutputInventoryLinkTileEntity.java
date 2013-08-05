@@ -24,6 +24,7 @@ public class OutputInventoryLinkTileEntity extends TileEntity {
 	}
 	@ForgeSubscribe
 	public void onPickup(EntityItemPickupEvent e){
+		System.out.println("1+"+worldObj.isRemote);
 		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
 			return;
 		}
