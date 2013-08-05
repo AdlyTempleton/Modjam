@@ -39,10 +39,8 @@ public class FocusedInventoryLink extends Block {
 	{
 		TileEntity tile = par1World.getBlockTileEntity(par2,par3,par4);
 
-		if (tile instanceof InventoryLinkTileEntity)
-		{
+		
 			
-			InventoryLinkTileEntity tileEntity = (InventoryLinkTileEntity) tile;
 			
 			
 				 int l = par1World.getBlockMetadata(par2, par3, par4);
@@ -69,7 +67,7 @@ public class FocusedInventoryLink extends Block {
 		                par1World.spawnParticle("reddust", (double)(f + f4), (double)f1, (double)(f2 + f3), 0.0D, 0.0D, 0.0D);
 		            
 		          
-		}
+		
 	}
 	@Override
 	@SideOnly(Side.CLIENT)
