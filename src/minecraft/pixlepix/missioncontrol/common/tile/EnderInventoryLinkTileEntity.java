@@ -12,7 +12,7 @@ public class EnderInventoryLinkTileEntity extends InventoryLinkTileEntity implem
 		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
 			return 0;
 		}
-		return 31;
+		return 26;
 	}
 
 	@Override
