@@ -7,6 +7,7 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.ForgeSubscribe;
@@ -20,7 +21,9 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 	public void dropItem(ItemStack item){
-		worldObj.spawnEntityInWorld(new EntityItem(worldObj,xCoord+0.5,yCoord+2.5,zCoord+0.5,item));
+		EntityItem e=new EntityItem(worldObj,xCoord+0.5,yCoord+2.5,zCoord+0.5,item);
+		e.setVelocity(0, 0,0);
+		worldObj.spawnEntityInWorld(e);
 	}
 	@Override
 	public void invalidate(){
@@ -31,18 +34,18 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 		if(worldObj.isBlockIndirectlyGettingPowered(xCoord, yCoord, zCoord)){
 			return;
 		}
-		if(e.entity instanceof EntityPlayer&&((EntityPlayer)e.entity).username.equals(player)){
+		if(!worldObj.isRemote&&e.entity instanceof EntityPlayer&&((EntityPlayer)e.entity).username.equals(player)){
 			drops=e.drops;
 			timeToCollect=400;
 		}
 	}
 	public void updateEntity(){
 		timeToCollect--;
-		if(timeToCollect<0&&drops!=null){
+		if(!worldObj.isRemote&&timeToCollect<0&&drops!=null){
 			Iterator<EntityItem> iter=drops.iterator();
 			while(iter.hasNext()){
 				EntityItem e=iter.next();
-				if(!e.isDead){
+				if(!e.isDead&&e.worldObj.getChunkFromChunkCoords(e.chunkCoordX,e.chunkCoordZ)!=null){
 					dropItem(e.getEntityItem());
 					e.setDead();
 				}
