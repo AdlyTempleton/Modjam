@@ -22,7 +22,9 @@ public class DeathInventoryLinkTileEntity extends TileEntity {
 	}
 	public void dropItem(ItemStack item){
 		EntityItem e=new EntityItem(worldObj,xCoord+0.5,yCoord+2.5,zCoord+0.5,item);
-		e.setVelocity(0, 0,0);
+		e.motionX=0;
+		e.motionY=0;
+		e.motionZ=0;
 		worldObj.spawnEntityInWorld(e);
 	}
 	@Override

@@ -37,17 +37,7 @@ public class InventoryLinkTileEntity extends TileEntity implements IInventory {
 	}
 	
 	public void animatePacket(){
-		if(player==null){
-			return;
-		}
-		
-		EntityPlayer entityPlayer=worldObj.getPlayerEntityByName(player);
-		if(entityPlayer==null){
-			return;
-		}
-		EntityItem entity=new PacketEntityItem(worldObj,entityPlayer.posX,entityPlayer.posY,entityPlayer.posZ, new ItemStack(MissionControl.packet));
-		worldObj.spawnEntityInWorld(entity);
-		PacketRegistry.packets.add(new PacketData(entity,xCoord,yCoord,zCoord));
+		return;
 	}
 	
 	@Override
